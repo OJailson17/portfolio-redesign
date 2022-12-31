@@ -30,7 +30,7 @@ export const Hero = () => {
 				<Text
 					fontWeight={'bold'}
 					fontSize={'44px'}
-					fontFamily={"Plus Jakarta Sans', sans-serif"}
+					fontFamily={"'Plus Jakarta Sans', sans-serif"}
 					mt={4}
 					color={'#232E35'}
 				>

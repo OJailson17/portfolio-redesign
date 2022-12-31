@@ -12,8 +12,8 @@ export const Skills = () => {
 					<Text
 						fontWeight={'bold'}
 						fontSize={20}
-						fontFamily={"Plus Jakarta Sans', sans-serif"}
-						style={{ color: '#656D72' }}
+						fontFamily={"'Plus Jakarta Sans', sans-serif"}
+						color={'#656D72'}
 					>
 						Frontend
 					</Text>
@@ -30,8 +30,8 @@ export const Skills = () => {
 					<Text
 						fontWeight={'bold'}
 						fontSize={20}
-						fontFamily={"Plus Jakarta Sans', sans-serif"}
-						style={{ color: '#656D72' }}
+						fontFamily={"'Plus Jakarta Sans', sans-serif"}
+						color={'#656D72'}
 					>
 						Backend
 					</Text>
