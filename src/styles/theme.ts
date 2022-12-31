@@ -5,6 +5,7 @@ export const theme = extendTheme({
 		global: {
 			'html, body': {
 				fontFamily: "'Inter', sans-serif",
+				background: '#fff',
 			},
 		},
 	},
