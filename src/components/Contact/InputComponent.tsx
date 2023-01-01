@@ -11,6 +11,7 @@ export const InputComponent = ({ placeholder }: InputComponentProps) => {
 			mt={4}
 			maxW={'600px'}
 			height={'48px'}
+			color={'text'}
 			borderColor={'#656D72'}
 			focusBorderColor={'#7E74F1'}
 			_hover={{

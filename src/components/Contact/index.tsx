@@ -28,17 +28,17 @@ export const Contact = () => {
 						mt={4}
 						maxW={600}
 						height={48}
-						borderColor={'#656D72'}
-						focusBorderColor={'#7E74F1'}
+						borderColor={'label'}
+						focusBorderColor={'primary'}
 						_hover={{
-							borderColor: '#7E74F1',
+							borderColor: 'primary',
 						}}
 					/>
 					<Button
 						width={'100%'}
 						height={49}
 						mt={6}
-						background={'#7E74F1'}
+						background={'primary'}
 						_hover={{
 							filter: 'brightness(80%)',
 						}}
@@ -50,7 +50,7 @@ export const Contact = () => {
 				</FormControl>
 
 				<Box width={'40%'}>
-					<Text>
+					<Text color={'text'}>
 						Se você gostou do meu trabalho e quer me contratar para um projeto
 						seu, ou até mesmo para sua empresa, ficarei feliz em trabalharmos
 						juntos. Fique a vontade e me mande uma mensagem através do
@@ -62,7 +62,7 @@ export const Contact = () => {
 						<Box>
 							<Image src={'/assets/mail.svg'} alt='' width={24} height={24} />
 						</Box>
-						<Text fontSize={14} fontWeight={'normal'} color={'#656D72'}>
+						<Text fontSize={14} fontWeight={'normal'} color={'label'}>
 							jaylsono17@gmail.com
 						</Text>
 					</Flex>

@@ -1,8 +1,11 @@
 import { Button, Flex, HStack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from '../../context/themeContext';
 
 export const Header = () => {
+	const { theme, changeTheme } = useTheme();
+
 	return (
 		<Flex
 			as='header'
@@ -11,7 +14,12 @@ export const Header = () => {
 			align={'center'}
 			justify={'space-between'}
 		>
-			<Image src='/assets/logo-light.svg' alt='' width='138' height='54' />
+			<Image
+				src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
+				alt=''
+				width='138'
+				height='54'
+			/>
 
 			<HStack as='nav' spacing={14}>
 				<Link href='/#tecnologias'>
@@ -26,9 +34,14 @@ export const Header = () => {
 			</HStack>
 
 			<Flex gap='8'>
-				<Button w={'25'} h={'25'} colorScheme='transparent'>
+				<Button
+					w={'25'}
+					h={'25'}
+					colorScheme='transparent'
+					onClick={() => changeTheme()}
+				>
 					<Image
-						src='/assets/moon.svg'
+						src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
 						alt='moon icon'
 						width='25'
 						height='25'

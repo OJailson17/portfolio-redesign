@@ -8,7 +8,7 @@ interface TechComponentProps {
 export const TechComponent = ({ tech, level }: TechComponentProps) => {
 	return (
 		<Box>
-			<Text fontWeight={'medium'} fontSize={14}>
+			<Text fontWeight={'medium'} fontSize={14} color={'text'}>
 				{tech}
 			</Text>
 

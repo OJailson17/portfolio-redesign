@@ -21,7 +21,7 @@ export const Hero = () => {
 						fontSize={12}
 						letterSpacing={'7.5px'}
 						lineHeight={6}
-						color={'#656D72'}
+						color={'label'}
 					>
 						MEU NOME É
 					</Text>
@@ -32,15 +32,15 @@ export const Hero = () => {
 					fontSize={'44px'}
 					fontFamily={"'Plus Jakarta Sans', sans-serif"}
 					mt={4}
-					color={'#232E35'}
+					color={'text'}
 				>
 					Jailson de{' '}
-					<Text as='span' color={'#7E74F1'}>
+					<Text as='span' color={'primary'}>
 						Oliveira.
 					</Text>
 				</Text>
 
-				<Text mt={8} lineHeight={8} color={'#232E35'}>
+				<Text mt={8} lineHeight={8} color={'text'}>
 					Sou desenvolvedor web. Gosto de construir tudo, desde sites simples
 					até sites mais complexos. Tenho foco em Front-end e possuo maior
 					proficiência e experiência no ecossistema Javascript
@@ -49,7 +49,7 @@ export const Hero = () => {
 				<HStack spacing={8} mt={10}>
 					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
 						<Image
-							src={'/assets/Instagram.svg'}
+							src={'/assets/instagram-light.svg'}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}
@@ -57,7 +57,7 @@ export const Hero = () => {
 					</Link>
 					<Link href={'https://github.com/OJailson17'} target='_blank'>
 						<Image
-							src={'/assets/Github.svg'}
+							src={'/assets/github-light.svg'}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}
@@ -69,7 +69,7 @@ export const Hero = () => {
 						target='_blank'
 					>
 						<Image
-							src={'/assets/Linkedin.svg'}
+							src={'/assets/linkedin-light.svg'}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}

@@ -39,7 +39,7 @@ export const Footer = () => {
 				</Link>
 			</HStack>
 
-			<Text mt={6} mb={20} color={'#656D72'} fontSize={14}>
+			<Text mt={6} mb={20} color={'label'} fontSize={14}>
 				&copy; 2023 - Jailson de Oliveira
 			</Text>
 		</Flex>

@@ -1,6 +1,6 @@
 import { Box, Flex, Text, VStack } from '@chakra-ui/react';
-import { backendTechnologies } from '../../utils/backendTecnologies';
-import { frontendTechnologies } from '../../utils/frontendTecnologies';
+import { backendTechnologies } from '../../utils/backendTechnologies';
+import { frontendTechnologies } from '../../utils/frontendTechnologies';
 import { SectionTitle } from '../SectionTitle';
 import { TechComponent } from './TechComponent';
 
@@ -15,7 +15,7 @@ export const Skills = () => {
 						fontWeight={'bold'}
 						fontSize={20}
 						fontFamily={"'Plus Jakarta Sans', sans-serif"}
-						color={'#656D72'}
+						color={'label'}
 					>
 						Frontend
 					</Text>
@@ -36,7 +36,7 @@ export const Skills = () => {
 						fontWeight={'bold'}
 						fontSize={20}
 						fontFamily={"'Plus Jakarta Sans', sans-serif"}
-						color={'#656D72'}
+						color={'label'}
 					>
 						Backend
 					</Text>

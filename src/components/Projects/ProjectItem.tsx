@@ -14,7 +14,7 @@ interface ProjectItemProps {
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
 	return (
-		<Box maxW={'360px'} borderRadius={'lg'} background={'#f1f1f1'}>
+		<Box maxW={'360px'} borderRadius={'lg'} background={'projectBackground'}>
 			<Box w='100%' h='250px' borderRadius={'lg'}>
 				<Image
 					src={project.imageUrl}
@@ -32,7 +32,7 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 					mt={4}
 					fontFamily={"'Plus Jakarta Sans', sans-serif"}
 					fontWeight={'medium'}
-					color={'#232E35'}
+					color={'text'}
 				>
 					{project.name}
 				</Text>
@@ -47,7 +47,7 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 					{project.techs.map(tech => (
 						<Text
 							fontSize={14}
-							color={'#656D72'}
+							color={'label'}
 							fontWeight={'medium'}
 							key={tech}
 						>
@@ -58,15 +58,17 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 
 				<Flex mt={4} mb={4} align={'center'} gap={4}>
 					<Link href={project.demo || project.code} target='_blank'>
-						<Button>
+						<Button background={'buttonBackground'}>
 							<Text fontSize={14} fontWeight={'medium'}>
 								Demo
 							</Text>
 						</Button>
 					</Link>
 					<Link href={project.code} target='_blank'>
-						<Button fontSize={14} fontWeight={'medium'}>
-							<Text>Código</Text>
+						<Button background={'buttonBackground'}>
+							<Text fontSize={14} fontWeight={'medium'}>
+								Código
+							</Text>
 						</Button>
 					</Link>
 				</Flex>
