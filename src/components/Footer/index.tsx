@@ -13,7 +13,7 @@ export const Footer = () => {
 			direction={'column'}
 		>
 			<HStack spacing={8}>
-				<Link href={'/'}>
+				<Link href={'https://www.instagram.com/ojailson17'} target='_blank'>
 					<Image
 						src={'/assets/instagram-footer.svg'}
 						alt='Instagram icon'
@@ -21,7 +21,7 @@ export const Footer = () => {
 						height={24}
 					/>
 				</Link>
-				<Link href={'/'}>
+				<Link href={'https://github.com/OJailson17'} target='_blank'>
 					<Image
 						src={'/assets/github-footer.svg'}
 						alt='Instagram icon'
@@ -29,7 +29,7 @@ export const Footer = () => {
 						height={24}
 					/>
 				</Link>
-				<Link href={'/'}>
+				<Link href={'https://www.linkedin.com/in/ojailson17'} target='_blank'>
 					<Image
 						src={'/assets/linkedin-footer.svg'}
 						alt='Instagram icon'

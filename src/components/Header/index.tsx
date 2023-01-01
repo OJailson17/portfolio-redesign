@@ -14,13 +14,13 @@ export const Header = () => {
 			<Image src='/assets/logo-light.svg' alt='' width='138' height='54' />
 
 			<HStack as='nav' spacing={14}>
-				<Link href='/'>
+				<Link href='/#tecnologias'>
 					<Text fontWeight={'medium'}>Tecnologias</Text>
 				</Link>
-				<Link href='/'>
+				<Link href='/#projetos'>
 					<Text fontWeight={'medium'}>Projetos</Text>
 				</Link>
-				<Link href='/'>
+				<Link href='/#contato'>
 					<Text fontWeight={'medium'}>Contato</Text>
 				</Link>
 			</HStack>
@@ -34,7 +34,7 @@ export const Header = () => {
 						height='25'
 					/>
 				</Button>
-				<Link href={'/'}>
+				<Link href='/assets/documents/jailson-de-oliveira-cv.pdf' download>
 					<Text fontWeight={'medium'} fontSize={14}>
 						Download CV
 					</Text>

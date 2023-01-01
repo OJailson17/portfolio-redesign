@@ -1,12 +1,23 @@
 import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
-export const ProjectItem = () => {
+export interface Project {
+	name: string;
+	techs: string[];
+	demo?: string;
+	code: string;
+	imageUrl: string;
+}
+interface ProjectItemProps {
+	project: Project;
+}
+
+export const ProjectItem = ({ project }: ProjectItemProps) => {
 	return (
-		<Box w={'360px'} borderRadius={'lg'} background={'#f1f1f1'}>
+		<Box maxW={'360px'} borderRadius={'lg'} background={'#f1f1f1'}>
 			<Box w='100%' h='250px' borderRadius={'lg'}>
 				<Image
-					src='https://picsum.photos/200/300'
+					src={project.imageUrl}
 					alt=''
 					objectFit={'cover'}
 					w='100%'
@@ -23,7 +34,7 @@ export const ProjectItem = () => {
 					fontWeight={'medium'}
 					color={'#232E35'}
 				>
-					Bíblia Sagrada Website
+					{project.name}
 				</Text>
 
 				<HStack
@@ -33,27 +44,27 @@ export const ProjectItem = () => {
 					wordBreak={'break-word'}
 					whiteSpace='initial'
 				>
-					{['Styled Components', 'ReactJS', 'Node'].map(el => (
+					{project.techs.map(tech => (
 						<Text
 							fontSize={14}
 							color={'#656D72'}
 							fontWeight={'medium'}
-							key={el}
+							key={tech}
 						>
-							{el}
+							{tech}
 						</Text>
 					))}
 				</HStack>
 
 				<Flex mt={4} mb={4} align={'center'} gap={4}>
-					<Link href={'/'}>
+					<Link href={project.demo || project.code} target='_blank'>
 						<Button>
 							<Text fontSize={14} fontWeight={'medium'}>
 								Demo
 							</Text>
 						</Button>
 					</Link>
-					<Link href={'/'}>
+					<Link href={project.code} target='_blank'>
 						<Button fontSize={14} fontWeight={'medium'}>
 							<Text>Código</Text>
 						</Button>

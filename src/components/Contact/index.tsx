@@ -13,7 +13,7 @@ import { InputComponent } from './InputComponent';
 
 export const Contact = () => {
 	return (
-		<Box as='section' mt={36} paddingInline={'120px'}>
+		<Box as='section' id='contato' mt={36} paddingInline={'120px'}>
 			<SectionTitle title='Quer me contratar?' subtitle='Contato' />
 
 			<Flex mt={14} align={'center'} justify={'space-between'}>
@@ -36,6 +36,7 @@ export const Contact = () => {
 					/>
 					<Button
 						width={'100%'}
+						height={49}
 						mt={6}
 						background={'#7E74F1'}
 						_hover={{

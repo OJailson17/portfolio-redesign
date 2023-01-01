@@ -15,8 +15,8 @@ export const TechComponent = ({ tech, level }: TechComponentProps) => {
 			<Box
 				width={'300px'}
 				height={2}
-				mt={4}
-				background='#F5F3FE'
+				mt={3}
+				background='#cfd7db'
 				borderRadius={'full'}
 			>
 				<Box

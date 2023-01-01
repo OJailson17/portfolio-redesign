@@ -47,7 +47,7 @@ export const Hero = () => {
 				</Text>
 
 				<HStack spacing={8} mt={10}>
-					<Link href={'/'}>
+					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
 						<Image
 							src={'/assets/Instagram.svg'}
 							alt='Github icon'
@@ -55,7 +55,7 @@ export const Hero = () => {
 							height={'24'}
 						/>
 					</Link>
-					<Link href={'/'}>
+					<Link href={'https://github.com/OJailson17'} target='_blank'>
 						<Image
 							src={'/assets/Github.svg'}
 							alt='Github icon'
@@ -64,7 +64,10 @@ export const Hero = () => {
 						/>
 					</Link>
 
-					<Link href={'/'}>
+					<Link
+						href={'https://www.linkedin.com/in/ojailson17/'}
+						target='_blank'
+					>
 						<Image
 							src={'/assets/Linkedin.svg'}
 							alt='Github icon'
