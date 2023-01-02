@@ -3,38 +3,110 @@ import {
 	Button,
 	Flex,
 	FormControl,
+	FormErrorMessage,
 	Input,
 	Text,
 	Textarea,
+	useToast,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { SectionTitle } from '../SectionTitle';
 import { InputComponent } from './InputComponent';
 
+import * as yup from 'yup';
+import { onSendEmail } from './submitEmail';
+
+export interface FormDataProps {
+	name: string;
+	email: string;
+	subject: string;
+	message: string;
+}
+
+const schema = yup.object({
+	name: yup
+		.string()
+		.min(3, 'Mínimo de 3 caracteres')
+		.trim()
+		.required('Campo obrigatório'),
+	email: yup
+		.string()
+		.email('Email precisa ser válido')
+		.trim()
+		.required('Campo obrigatório'),
+	subject: yup
+		.string()
+		.min(3, 'Mínimo de 3 caracteres')
+		.trim()
+		.required('Campo obrigatório'),
+	message: yup
+		.string()
+		.min(3, 'Mínimo de 3 caracteres')
+		.trim()
+		.required('Campo obrigatório'),
+});
+
 export const Contact = () => {
+	const toast = useToast();
+
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors, isSubmitting },
+	} = useForm<FormDataProps>({
+		resolver: yupResolver(schema),
+	});
+
+	// call the function to send the email
+	const handleSendEmail = async (data: FormDataProps) => {
+		await onSendEmail({ data, reset, toast });
+	};
+
 	return (
 		<Box as='section' id='contato' mt={36} paddingInline={'120px'}>
 			<SectionTitle title='Quer me contratar?' subtitle='Contato' />
 
 			<Flex mt={14} align={'center'} justify={'space-between'}>
-				<FormControl width={'50%'}>
-					<InputComponent placeholder='Nome' />
-					<InputComponent placeholder='Email' />
-					<InputComponent placeholder='Assunto' />
-
-					<Textarea
-						placeholder='Mensagem'
-						resize='none'
-						mt={4}
-						maxW={600}
-						height={48}
-						borderColor={'label'}
-						focusBorderColor={'primary'}
-						_hover={{
-							borderColor: 'primary',
-						}}
+				<Box as='form' width={'50%'} onSubmit={handleSubmit(handleSendEmail)}>
+					<InputComponent
+						placeholder='Nome'
+						{...register('name')}
+						error={errors?.name}
 					/>
+					<InputComponent
+						placeholder='Email'
+						{...register('email')}
+						error={errors?.email}
+					/>
+					<InputComponent
+						placeholder='Assunto'
+						{...register('subject')}
+						error={errors?.subject}
+					/>
+
+					<FormControl isInvalid={!!errors.message}>
+						<Textarea
+							placeholder='Mensagem'
+							resize='none'
+							mt={4}
+							maxW={600}
+							height={48}
+							borderColor={'label'}
+							focusBorderColor={'primary'}
+							_hover={{
+								borderColor: 'primary',
+							}}
+							{...register('message')}
+						/>
+						<FormErrorMessage>{errors?.message?.message}</FormErrorMessage>
+					</FormControl>
+
 					<Button
+						type='submit'
 						width={'100%'}
 						height={49}
 						mt={6}
@@ -42,12 +114,13 @@ export const Contact = () => {
 						_hover={{
 							filter: 'brightness(80%)',
 						}}
+						isLoading={isSubmitting}
 					>
 						<Text color={'#F5F3FE'} fontSize={14} fontWeight={'medium'}>
 							Enviar
 						</Text>
 					</Button>
-				</FormControl>
+				</Box>
 
 				<Box width={'40%'}>
 					<Text color={'text'}>
