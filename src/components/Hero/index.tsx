@@ -2,8 +2,11 @@ import { Box, Flex, HStack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { useTheme } from '../../context/themeContext';
 
 export const Hero = () => {
+	const { theme } = useTheme();
+
 	return (
 		<Flex
 			as='section'
@@ -49,7 +52,9 @@ export const Hero = () => {
 				<HStack spacing={8} mt={10}>
 					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
 						<Image
-							src={'/assets/instagram-light.svg'}
+							src={`/assets/instagram-${
+								theme === 'dark' ? 'light' : 'dark'
+							}.svg`}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}
@@ -57,7 +62,7 @@ export const Hero = () => {
 					</Link>
 					<Link href={'https://github.com/OJailson17'} target='_blank'>
 						<Image
-							src={'/assets/github-light.svg'}
+							src={`/assets/github-${theme === 'dark' ? 'light' : 'dark'}.svg`}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}
@@ -69,7 +74,9 @@ export const Hero = () => {
 						target='_blank'
 					>
 						<Image
-							src={'/assets/linkedin-light.svg'}
+							src={`/assets/linkedin-${
+								theme === 'dark' ? 'light' : 'dark'
+							}.svg`}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}

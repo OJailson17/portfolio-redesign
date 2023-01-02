@@ -58,14 +58,24 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 
 				<Flex mt={4} mb={4} align={'center'} gap={4}>
 					<Link href={project.demo || project.code} target='_blank'>
-						<Button background={'buttonBackground'}>
+						<Button
+							background={'buttonBackground'}
+							_hover={{
+								filter: 'brightness(90%)',
+							}}
+						>
 							<Text fontSize={14} fontWeight={'medium'}>
 								Demo
 							</Text>
 						</Button>
 					</Link>
 					<Link href={project.code} target='_blank'>
-						<Button background={'buttonBackground'}>
+						<Button
+							background={'buttonBackground'}
+							_hover={{
+								filter: 'brightness(90%)',
+							}}
+						>
 							<Text fontSize={14} fontWeight={'medium'}>
 								Código
 							</Text>

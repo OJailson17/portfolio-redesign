@@ -1,6 +1,5 @@
-import { Button, Flex, HStack, Text } from '@chakra-ui/react';
+import { Button, Flex, HStack, Link, Text } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTheme } from '../../context/themeContext';
 
 export const Header = () => {
@@ -22,13 +21,13 @@ export const Header = () => {
 			/>
 
 			<HStack as='nav' spacing={14}>
-				<Link href='/#tecnologias'>
+				<Link href='/#tecnologias' color='text'>
 					<Text fontWeight={'medium'}>Tecnologias</Text>
 				</Link>
-				<Link href='/#projetos'>
+				<Link href='/#projetos' color='text'>
 					<Text fontWeight={'medium'}>Projetos</Text>
 				</Link>
-				<Link href='/#contato'>
+				<Link href='/#contato' color='text'>
 					<Text fontWeight={'medium'}>Contato</Text>
 				</Link>
 			</HStack>
@@ -47,7 +46,11 @@ export const Header = () => {
 						height='25'
 					/>
 				</Button>
-				<Link href='/assets/documents/jailson-de-oliveira-cv.pdf' download>
+				<Link
+					href='/assets/documents/jailson-de-oliveira-cv.pdf'
+					download
+					color='text'
+				>
 					<Text fontWeight={'medium'} fontSize={14}>
 						Download CV
 					</Text>

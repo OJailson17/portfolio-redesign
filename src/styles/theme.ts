@@ -17,7 +17,6 @@ export const lightTheme = extendTheme({
 			},
 			body: {
 				fontFamily: "'Inter', sans-serif",
-				background: 'background',
 			},
 		},
 	},
