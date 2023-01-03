@@ -17,7 +17,9 @@ export const Hero = () => {
 	return (
 		<Flex
 			as='section'
-			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			w={['85%']}
+			margin={'0 auto'}
 			mt={'36'}
 			align={!isWideVersion ? 'flex-start' : 'center'}
 			justify={'space-between'}

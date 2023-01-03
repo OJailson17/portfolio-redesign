@@ -15,8 +15,10 @@ export const Skills = () => {
 		<Box
 			as='section'
 			id='tecnologias'
+			w={['85%']}
+			margin={'0 auto'}
 			mt={36}
-			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
 		>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 

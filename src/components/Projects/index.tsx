@@ -9,8 +9,10 @@ export const Projects = () => {
 		<Box
 			as='section'
 			id='projetos'
+			w={['85%']}
+			margin={'0 auto'}
 			mt={36}
-			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
 		>
 			<SectionTitle title='Meus Projetos' subtitle='Experiência' />
 

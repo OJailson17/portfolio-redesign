@@ -29,7 +29,9 @@ export const Header = () => {
 	return (
 		<Flex
 			as='header'
-			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			w={['85%']}
+			margin={'0 auto'}
 			paddingTop={10}
 			align={'center'}
 			justify={'space-between'}
