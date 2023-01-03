@@ -8,13 +8,16 @@ export const Projects = () => {
 		<Box
 			as='section'
 			id='projetos'
-			scrollBehavior={'smooth'}
 			mt={36}
-			paddingInline={'120px'}
+			paddingInline={['30px', '30px', '50px', '50px', '120px']}
 		>
 			<SectionTitle title='Meus Projetos' subtitle='Experiência' />
 
-			<SimpleGrid columns={3} spacing={14} mt={36}>
+			<SimpleGrid
+				columns={[1, 1, 2, 3, 3]}
+				spacing={[10, 10, 10, 10, 14]}
+				mt={36}
+			>
 				{projects.map(project => (
 					<ProjectItem key={project.name} project={project} />
 				))}

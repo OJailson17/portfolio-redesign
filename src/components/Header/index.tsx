@@ -1,14 +1,33 @@
-import { Button, Flex, HStack, Link, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Flex,
+	HStack,
+	Link,
+	Text,
+	Tooltip,
+	useBreakpointValue,
+	useDisclosure,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import { useTheme } from '../../context/themeContext';
+import { Navbar } from './Navbar';
+import { NavContent } from './NavContent';
 
 export const Header = () => {
 	const { theme, changeTheme } = useTheme();
 
+	const disclosure = useDisclosure();
+
+	const isWideVersion = useBreakpointValue({
+		base: false,
+		lg: true,
+	});
+
 	return (
 		<Flex
 			as='header'
-			paddingInline={'120px'}
+			paddingInline={['30px', '30px', '50px', '50px', '120px']}
 			paddingTop={10}
 			align={'center'}
 			justify={'space-between'}
@@ -20,41 +39,51 @@ export const Header = () => {
 				height='54'
 			/>
 
-			<HStack as='nav' spacing={14}>
-				<Link href='/#tecnologias' color='text'>
-					<Text fontWeight={'medium'}>Tecnologias</Text>
-				</Link>
-				<Link href='/#projetos' color='text'>
-					<Text fontWeight={'medium'}>Projetos</Text>
-				</Link>
-				<Link href='/#contato' color='text'>
-					<Text fontWeight={'medium'}>Contato</Text>
-				</Link>
-			</HStack>
+			{isWideVersion && <NavContent />}
 
-			<Flex gap='8'>
-				<Button
-					w={'25'}
-					h={'25'}
-					colorScheme='transparent'
-					onClick={() => changeTheme()}
-				>
-					<Image
-						src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
-						alt='moon icon'
-						width='25'
-						height='25'
-					/>
-				</Button>
-				<Link
-					href='/assets/documents/jailson-de-oliveira-cv.pdf'
-					download
-					color='text'
-				>
-					<Text fontWeight={'medium'} fontSize={14}>
-						Download CV
-					</Text>
-				</Link>
+			<Navbar disclosure={disclosure} />
+
+			<Flex gap={[5, 8, 8]} direction={['row']} align={'center'}>
+				<Tooltip label='Mudar tema' aria-label='A tooltip'>
+					<Button
+						w={'24px'}
+						h={'24px'}
+						colorScheme='transparent'
+						onClick={() => changeTheme()}
+					>
+						<Image
+							src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
+							alt='moon icon'
+							fill
+							style={{
+								objectFit: 'contain',
+							}}
+						/>
+					</Button>
+				</Tooltip>
+
+				<Tooltip label='Baixar Currículo' aria-label='A tooltip'>
+					<Link
+						href='/assets/documents/jailson-de-oliveira-cv.pdf'
+						download
+						color='text'
+					>
+						<Text fontWeight={'medium'} fontSize={14}>
+							{!isWideVersion ? 'CV' : 'Download CV'}
+						</Text>
+					</Link>
+				</Tooltip>
+
+				{!isWideVersion && (
+					<Box onClick={disclosure.onOpen}>
+						<Image
+							src={`/assets/menu-${theme === 'light' ? 'dark' : 'light'}.svg`}
+							alt=''
+							width={30}
+							height={30}
+						/>
+					</Box>
+				)}
 			</Flex>
 		</Flex>
 	);

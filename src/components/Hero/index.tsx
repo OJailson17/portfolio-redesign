@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Text } from '@chakra-ui/react';
+import { Box, Flex, HStack, Text, useBreakpointValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -7,17 +7,21 @@ import { useTheme } from '../../context/themeContext';
 export const Hero = () => {
 	const { theme } = useTheme();
 
+	const isWideVersion = useBreakpointValue({
+		base: false,
+		lg: true,
+	});
+
 	return (
 		<Flex
 			as='section'
-			paddingInline={'120px'}
+			paddingInline={['30px', '30px', '50px', '50px', '120px']}
 			mt={'36'}
-			align={'center'}
+			align={!isWideVersion ? 'flex-start' : 'center'}
 			justify={'space-between'}
-			// bg='red'
 		>
-			<Box w={'50%'}>
-				<Flex align={'center'} gap={4}>
+			<Box w={['100%', '100%', '50%']}>
+				<Flex align={'center'} gap={4} direction={'row'}>
 					<Box width={4} height={0.5} background='#D9D9D9' />
 					<Text
 						fontWeight={'medium'}
@@ -85,7 +89,7 @@ export const Hero = () => {
 				</HStack>
 			</Box>
 
-			<Box>
+			<Box display={['none', 'none', 'block']}>
 				<Image
 					src={'/assets/hero-image.svg'}
 					alt=''

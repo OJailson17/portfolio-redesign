@@ -24,7 +24,7 @@ export const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
 
 			<Text
 				fontWeight={'bold'}
-				fontSize={'36px'}
+				fontSize={36}
 				fontFamily={"'Plus Jakarta Sans', sans-serif"}
 				mt={2}
 				color={'text'}

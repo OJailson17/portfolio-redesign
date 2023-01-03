@@ -1,16 +1,33 @@
-import { Box, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { backendTechnologies } from '../../utils/backendTechnologies';
 import { frontendTechnologies } from '../../utils/frontendTechnologies';
 import { SectionTitle } from '../SectionTitle';
 import { TechComponent } from './TechComponent';
 
 export const Skills = () => {
+	const isWideVersion = useBreakpointValue({
+		base: false,
+		lg: true,
+	});
+
 	return (
-		<Box as='section' id='tecnologias' mt={36} paddingInline={'120'}>
+		<Box
+			as='section'
+			id='tecnologias'
+			mt={36}
+			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+		>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 
-			<Flex mt={14} mb={4} justify={'space-between'}>
-				<Box>
+			<Flex
+				mt={14}
+				mb={4}
+				justify={'space-between'}
+				direction={['column', 'column', 'row']}
+				align={!isWideVersion ? 'flex-start' : ''}
+				gap={!isWideVersion ? 10 : 0}
+			>
+				<Box w='100%'>
 					<Text
 						fontWeight={'bold'}
 						fontSize={20}
@@ -31,7 +48,7 @@ export const Skills = () => {
 					</VStack>
 				</Box>
 
-				<Box>
+				<Box w='100%'>
 					<Text
 						fontWeight={'bold'}
 						fontSize={20}

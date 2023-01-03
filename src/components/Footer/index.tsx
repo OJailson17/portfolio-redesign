@@ -6,7 +6,7 @@ export const Footer = () => {
 	return (
 		<Flex
 			as='footer'
-			paddingInline={'120px'}
+			paddingInline={['30px', '30px', '50px', '90px', '120px']}
 			mt={36}
 			align={'center'}
 			justify={'center'}

@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
 
 interface TechComponentProps {
 	tech: string;
@@ -6,14 +6,19 @@ interface TechComponentProps {
 }
 
 export const TechComponent = ({ tech, level }: TechComponentProps) => {
+	const isWideVersion = useBreakpointValue({
+		base: false,
+		lg: true,
+	});
+
 	return (
-		<Box>
+		<Box width={['100%']}>
 			<Text fontWeight={'medium'} fontSize={14} color={'text'}>
 				{tech}
 			</Text>
 
 			<Box
-				width={'300px'}
+				maxW={'300px'}
 				height={2}
 				mt={3}
 				background='#cfd7db'

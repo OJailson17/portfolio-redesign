@@ -7,6 +7,7 @@ import {
 	Input,
 	Text,
 	Textarea,
+	useBreakpointValue,
 	useToast,
 } from '@chakra-ui/react';
 import Image from 'next/image';
@@ -52,6 +53,11 @@ const schema = yup.object({
 export const Contact = () => {
 	const toast = useToast();
 
+	const isWideVersion = useBreakpointValue({
+		base: false,
+		lg: true,
+	});
+
 	const {
 		register,
 		handleSubmit,
@@ -67,11 +73,26 @@ export const Contact = () => {
 	};
 
 	return (
-		<Box as='section' id='contato' mt={36} paddingInline={'120px'}>
+		<Box
+			as='section'
+			id='contato'
+			mt={36}
+			paddingInline={['30px', '30px', '50px', '50px', '120px']}
+		>
 			<SectionTitle title='Quer me contratar?' subtitle='Contato' />
 
-			<Flex mt={14} align={'center'} justify={'space-between'}>
-				<Box as='form' width={'50%'} onSubmit={handleSubmit(handleSendEmail)}>
+			<Flex
+				mt={14}
+				align={['flex-start', 'flex-start', 'flex-start', 'center']}
+				justify={'space-between'}
+				direction={!isWideVersion ? 'column-reverse' : 'row'}
+				gap={!isWideVersion ? 10 : 0}
+			>
+				<Box
+					as='form'
+					width={['100%', '100%', '90%', '50%', '50%']}
+					onSubmit={handleSubmit(handleSendEmail)}
+				>
 					<InputComponent
 						placeholder='Nome'
 						{...register('name')}
@@ -96,6 +117,7 @@ export const Contact = () => {
 							maxW={600}
 							height={48}
 							borderColor={'label'}
+							color={'text'}
 							focusBorderColor={'primary'}
 							_hover={{
 								borderColor: 'primary',
@@ -122,7 +144,7 @@ export const Contact = () => {
 					</Button>
 				</Box>
 
-				<Box width={'40%'}>
+				<Box width={['100%', '100%', '70%', '40%', '40%']}>
 					<Text color={'text'}>
 						Se você gostou do meu trabalho e quer me contratar para um projeto
 						seu, ou até mesmo para sua empresa, ficarei feliz em trabalharmos
