@@ -1,4 +1,5 @@
 import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react';
+
 import Link from 'next/link';
 
 export interface Project {

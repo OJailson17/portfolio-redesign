@@ -4,20 +4,19 @@ import {
 	Flex,
 	FormControl,
 	FormErrorMessage,
-	Input,
 	Text,
 	Textarea,
 	useBreakpointValue,
 	useToast,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import Image from 'next/image';
+import * as yup from 'yup';
+
 import { SectionTitle } from '../SectionTitle';
 import { InputComponent } from './InputComponent';
-
-import * as yup from 'yup';
 import { onSendEmail } from './submitEmail';
 
 export interface FormDataProps {

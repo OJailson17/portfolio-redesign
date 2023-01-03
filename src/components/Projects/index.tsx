@@ -1,4 +1,5 @@
-import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
+import { Box, SimpleGrid } from '@chakra-ui/react';
+
 import { projects } from '../../utils/projectsData';
 import { SectionTitle } from '../SectionTitle';
 import { ProjectItem } from './ProjectItem';

@@ -1,7 +1,9 @@
 import { Box, Flex, HStack, Text, useBreakpointValue } from '@chakra-ui/react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
 import { useTheme } from '../../context/themeContext';
 
 export const Hero = () => {

@@ -1,4 +1,5 @@
 import { Box, Flex, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
+
 import { backendTechnologies } from '../../utils/backendTechnologies';
 import { frontendTechnologies } from '../../utils/frontendTechnologies';
 import { SectionTitle } from '../SectionTitle';

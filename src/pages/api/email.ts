@@ -1,9 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { google } from 'googleapis';
-import nodemailer, { TransportOptions } from 'nodemailer';
-import { emailSchemaHTML, emailSchemaText } from '../../utils/emailSchema';
 
+import nodemailer, { TransportOptions } from 'nodemailer';
 import Cors from 'cors';
+
+import { emailSchemaHTML, emailSchemaText } from '../../utils/emailSchema';
 import initMiddleware from '../../lib/init-middleware';
 
 // Initialize the cors middleware

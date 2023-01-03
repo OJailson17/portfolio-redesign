@@ -8,11 +8,13 @@ import {
 	useBreakpointValue,
 	useDisclosure,
 } from '@chakra-ui/react';
+
 import Image from 'next/image';
-import { useTheme } from '../../context/themeContext';
+import Link from 'next/link';
+
 import { Navbar } from './Navbar';
 import { NavContent } from './NavContent';
-import Link from 'next/link';
+import { useTheme } from '../../context/themeContext';
 
 export const Header = () => {
 	const { theme, changeTheme } = useTheme();

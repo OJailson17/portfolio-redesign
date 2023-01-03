@@ -6,7 +6,9 @@ import {
 	DrawerOverlay,
 	UseDisclosureReturn,
 } from '@chakra-ui/react';
+
 import React from 'react';
+
 import { NavContent } from './NavContent';
 
 interface NavbarProps {
