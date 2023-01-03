@@ -2,7 +2,7 @@ import { Flex, Link, Text } from '@chakra-ui/react';
 
 interface NavContentProps {
 	isMobile?: boolean;
-	onClose: () => void;
+	onClose?: () => void;
 }
 
 export const NavContent = ({ isMobile, onClose }: NavContentProps) => {

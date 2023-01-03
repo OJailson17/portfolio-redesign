@@ -2,8 +2,7 @@ import {
 	Box,
 	Button,
 	Flex,
-	HStack,
-	Link,
+	Link as ChakraLink,
 	Text,
 	Tooltip,
 	useBreakpointValue,
@@ -13,6 +12,7 @@ import Image from 'next/image';
 import { useTheme } from '../../context/themeContext';
 import { Navbar } from './Navbar';
 import { NavContent } from './NavContent';
+import Link from 'next/link';
 
 export const Header = () => {
 	const { theme, changeTheme } = useTheme();
@@ -32,12 +32,14 @@ export const Header = () => {
 			align={'center'}
 			justify={'space-between'}
 		>
-			<Image
-				src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
-				alt=''
-				width='138'
-				height='54'
-			/>
+			<Link href={'/'}>
+				<Image
+					src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
+					alt=''
+					width='138'
+					height='54'
+				/>
+			</Link>
 
 			{isWideVersion && <NavContent />}
 
@@ -63,7 +65,7 @@ export const Header = () => {
 				</Tooltip>
 
 				<Tooltip label='Baixar Currículo' aria-label='A tooltip'>
-					<Link
+					<ChakraLink
 						href='/assets/documents/jailson-de-oliveira-cv.pdf'
 						download
 						color='text'
@@ -71,7 +73,7 @@ export const Header = () => {
 						<Text fontWeight={'medium'} fontSize={14}>
 							{!isWideVersion ? 'CV' : 'Download CV'}
 						</Text>
-					</Link>
+					</ChakraLink>
 				</Tooltip>
 
 				{!isWideVersion && (
