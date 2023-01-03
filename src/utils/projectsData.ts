@@ -26,36 +26,6 @@ export const projects: Project[] = [
 		techs: ['NextJS', 'Typescript', 'Stripe', 'Redux', 'Styled Components'],
 	},
 	{
-		name: "What I've Learned",
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/home-page-screen_ziIC7X9Dej.png?updatedAt=1626396160470',
-		code: 'https://github.com/OJailson17/What-I-ve-Learned-Frontend',
-		demo: 'http://whativelearned.herokuapp.com',
-		techs: ['Express', 'MongoDB', 'Node', 'ReactJs', 'Styled Components'],
-	},
-
-	// {
-	// 	name: 'Ignews',
-	// 	description:
-	// 		'Ignews é um blog onde contém vários posts relacionados a tecnologia, para serem consumidos, é necessário uma assinatura mensal. A aplicação foi construída na trilha de ReactJS no curso Ignite da Rocketseat. O blog é apenas uma aplicação feita para estudo e por isso a assinatura não é válida e os posts são apenas para exemplificar um como ficaria um post real.',
-	// 	images:
-	// 		'https://ik.imagekit.io/jayllson/ignews-home-screenshot.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653118440584',
-	//'https://ik.imagekit.io/jayllson/ignews-post-subscribed-screenshot.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653118488383',
-	// 	],
-	// 	link: 'project/ignews',
-	// 	code: 'https://github.com/OJailson17/ignews-ignite',
-	// 	demo: 'https://ignews-ignite-ojailson17.vercel.app/',
-	// 	techs: [
-	// 		'NextJS',
-	// 		'Typescript',
-	// 		'SASS',
-	// 		'FaunaDB',
-	// 		'Prismic',
-	// 		'Stripe',
-	// 	],
-	// },
-
-	{
 		name: 'Handle Landing Page',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/huddle-landing-page_oDP23v96_.png?updatedAt=1634095612321',
