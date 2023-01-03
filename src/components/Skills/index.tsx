@@ -24,7 +24,7 @@ export const Skills = () => {
 				mt={14}
 				mb={4}
 				justify={'space-between'}
-				direction={['column', 'column', 'row']}
+				direction={['column', 'row', 'row']}
 				align={!isWideVersion ? 'flex-start' : ''}
 				gap={!isWideVersion ? 10 : 0}
 			>

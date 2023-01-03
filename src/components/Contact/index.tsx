@@ -128,7 +128,8 @@ export const Contact = () => {
 
 					<Button
 						type='submit'
-						width={'100%'}
+						w={'100%'}
+						maxW={'600px'}
 						height={49}
 						mt={6}
 						background={'primary'}
