@@ -46,7 +46,7 @@ export const ThemeContextProvider = ({
 
 		// If there is no data on local storage, then set it to light theme
 		if (!localTheme) {
-			localStorage.setItem('@portfolio:theme', 'light');
+			localStorage.setItem('@portfolio:theme', 'dark');
 			return;
 		}
 
