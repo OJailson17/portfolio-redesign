@@ -59,7 +59,7 @@ export const Hero = () => {
 					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
 						<Image
 							src={`/assets/instagram-${
-								theme === 'dark' ? 'light' : 'dark'
+								!theme || theme === 'dark' ? 'light' : 'dark'
 							}.svg`}
 							alt='Github icon'
 							width={'24'}
@@ -68,7 +68,9 @@ export const Hero = () => {
 					</Link>
 					<Link href={'https://github.com/OJailson17'} target='_blank'>
 						<Image
-							src={`/assets/github-${theme === 'dark' ? 'light' : 'dark'}.svg`}
+							src={`/assets/github-${
+								!theme || theme === 'dark' ? 'light' : 'dark'
+							}.svg`}
 							alt='Github icon'
 							width={'24'}
 							height={'24'}
@@ -81,7 +83,7 @@ export const Hero = () => {
 					>
 						<Image
 							src={`/assets/linkedin-${
-								theme === 'dark' ? 'light' : 'dark'
+								!theme || theme === 'dark' ? 'light' : 'dark'
 							}.svg`}
 							alt='Github icon'
 							width={'24'}
