@@ -55,22 +55,7 @@ export default function Document() {
 					href='/favicon-16x16.png'
 				/>
 				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
-				<link rel='manifest' href='/site.webmanifest.json' />
-				<meta name='msapplication-TileColor' content='#ffffff' />
-				<meta name='theme-color' content='#ffffff' />
-
-				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-				<meta charSet='UTF-8' />
-				<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-				<meta
-					name='description'
-					content='Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.'
-				/>
-				<meta name='author' content='Jailson de Oliveira'></meta>
-				<meta
-					name='keywords'
-					content='Desenvolvedor Web, Desenvolvedor frontend, Frontend, Javascript, React, NextJs, Typescript, Programador, Utinga, Bahia'
-				></meta>
+				<link rel='manifest' href='/site.webmanifest' />
 
 				<link
 					href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700&display=swap'
