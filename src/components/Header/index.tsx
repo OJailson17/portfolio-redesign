@@ -36,7 +36,9 @@ export const Header = () => {
 		>
 			<Link href={'/'}>
 				<Image
-					src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
+					src={`/assets/logo-${
+						!theme || theme === 'light' ? 'dark' : 'light'
+					}.svg`}
 					alt=''
 					width='138'
 					height='54'
