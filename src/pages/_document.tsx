@@ -30,6 +30,35 @@ export default function Document() {
 					href='https://fonts.gstatic.com'
 					crossOrigin='true'
 				/>
+
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/apple-touch-icon.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='192x192'
+					href='/android-chore-192x192.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/favicon-32x32.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='16x16'
+					href='/favicon-16x16.png'
+				/>
+				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+				<link rel='manifest' href='/site.webmanifest.json' />
+				<meta name='msapplication-TileColor' content='#ffffff' />
+				<meta name='theme-color' content='#ffffff' />
+
 				<link
 					href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700&display=swap'
 					rel='stylesheet'
