@@ -23,7 +23,7 @@ export const Navbar = ({ disclosure }: NavbarProps) => {
 					<DrawerCloseButton mt={5} color={'text'} fontSize={18} />
 
 					<DrawerBody>
-						<NavContent isMobile />
+						<NavContent isMobile onClose={onClose} />
 					</DrawerBody>
 				</DrawerContent>
 			</DrawerOverlay>
