@@ -16,7 +16,7 @@ export default function Home() {
 	const { theme } = useTheme();
 
 	return (
-		<ChakraProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+		<ChakraProvider theme={!theme || theme === 'dark' ? darkTheme : lightTheme}>
 			<Head>
 				<title>Jailson de Oliveira | Portfólio</title>
 			</Head>

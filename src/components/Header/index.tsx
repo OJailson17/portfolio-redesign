@@ -36,9 +36,7 @@ export const Header = () => {
 		>
 			<Link href={'/'}>
 				<Image
-					src={`/assets/logo-${
-						!theme || theme === 'light' ? 'dark' : 'light'
-					}.svg`}
+					src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
 					alt=''
 					width='138'
 					height='54'
@@ -58,9 +56,7 @@ export const Header = () => {
 						onClick={() => changeTheme()}
 					>
 						<Image
-							src={`/assets/${
-								!theme || theme === 'light' ? 'moon' : 'sun'
-							}.svg`}
+							src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
 							alt='moon icon'
 							fill
 							style={{
@@ -85,9 +81,7 @@ export const Header = () => {
 				{!isWideVersion && (
 					<Box onClick={disclosure.onOpen}>
 						<Image
-							src={`/assets/menu-${
-								!theme || theme === 'light' ? 'dark' : 'light'
-							}.svg`}
+							src={`/assets/menu-${theme === 'light' ? 'dark' : 'light'}.svg`}
 							alt=''
 							width={30}
 							height={30}

@@ -26,7 +26,7 @@ export const ThemeContextProvider = ({
 
 	// If theme is dark, change to light, if it's light change it to dark
 	const changeTheme = () => {
-		theme === 'dark' ? setTheme('light') : setTheme('dark');
+		!theme || theme === 'dark' ? setTheme('light') : setTheme('dark');
 	};
 
 	// get theme from local storage and set to theme state
@@ -34,6 +34,7 @@ export const ThemeContextProvider = ({
 		const getTheme = localStorage.getItem('@portfolio:theme') as Theme;
 
 		if (!getTheme) {
+			localStorage.setItem('@portfolio:theme', 'dark');
 			return;
 		}
 
@@ -42,14 +43,6 @@ export const ThemeContextProvider = ({
 
 	// set the theme state value to local storage
 	useEffect(() => {
-		const localTheme = localStorage.getItem('@portfolio:theme');
-
-		// If there is no data on local storage, then set it to light theme
-		if (!localTheme) {
-			localStorage.setItem('@portfolio:theme', 'dark');
-			return;
-		}
-
 		localStorage.setItem('@portfolio:theme', theme || '');
 	}, [theme]);
 
