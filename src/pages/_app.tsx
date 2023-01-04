@@ -54,9 +54,8 @@ export default function App({ Component, pageProps }: AppProps) {
 					property='og:image'
 					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
 				/>
-				<meta property='og:image:type' content='image/jpg' />
-				<meta property='og:image:width' content='400' />
-				<meta property='og:image:height' content='300' />
+				<meta property='og:image:width' content='1840' />
+				<meta property='og:image:height' content='1840' />
 
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
