@@ -57,8 +57,8 @@ export default function App({ Component, pageProps }: AppProps) {
 					property='og:image'
 					content='https://jailsondeoliveira.vercel.app/api/og'
 				/>
-				<meta property='og:image:width' content='600' />
-				<meta property='og:image:height' content='600' />
+				<meta property='og:image:width' content='1200' />
+				<meta property='og:image:height' content='563' />
 
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
