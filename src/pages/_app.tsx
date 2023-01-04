@@ -31,7 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
 					property='og:site_name'
 					content='Jailson de Oliveira | Portfólio'
 				/>
-				<meta property='og:image' content='https://github.com/OJailson17.png' />
+				<meta
+					property='og:image'
+					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
+				/>
 				<meta
 					property='og:image:alt'
 					content='Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.'
