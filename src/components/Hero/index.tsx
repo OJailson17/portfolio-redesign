@@ -1,4 +1,12 @@
-import { Box, Flex, HStack, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+	Box,
+	Flex,
+	HStack,
+	keyframes,
+	Text,
+	useBreakpointValue,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,10 +22,21 @@ export const Hero = () => {
 		lg: true,
 	});
 
+	const animationKeyFrame = keyframes`
+	from {
+	opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+`;
+
+	const animation = `${animationKeyFrame} linear 0.5s forwards`;
+
 	return (
 		<Flex
-			as='section'
-			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			as={motion.section}
+			animation={animation}
 			w={['85%']}
 			margin={'0 auto'}
 			mt={'36'}

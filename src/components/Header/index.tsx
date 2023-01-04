@@ -2,6 +2,7 @@ import {
 	Box,
 	Button,
 	Flex,
+	keyframes,
 	Link as ChakraLink,
 	Text,
 	Tooltip,
@@ -16,6 +17,17 @@ import { Navbar } from './Navbar';
 import { NavContent } from './NavContent';
 import { useTheme } from '../../context/themeContext';
 
+const animationKeyFrame = keyframes`
+from {
+opacity: 0;
+}
+to {
+	opacity: 1;
+}
+`;
+
+const animation = `${animationKeyFrame} linear 0.5s forwards`;
+
 export const Header = () => {
 	const { theme, changeTheme } = useTheme();
 
@@ -28,8 +40,8 @@ export const Header = () => {
 
 	return (
 		<Flex
-			as='header'
-			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
+			as={'header'}
+			animation={animation}
 			w={['85%']}
 			margin={'0 auto'}
 			paddingTop={10}
@@ -45,9 +57,7 @@ export const Header = () => {
 				/>
 			</Link>
 
-			{isWideVersion && <NavContent />}
-
-			<Navbar disclosure={disclosure} />
+			{isWideVersion ? <NavContent /> : <Navbar disclosure={disclosure} />}
 
 			<Flex gap={[5, 8, 8]} direction={['row']} align={'center'}>
 				<Tooltip label='Mudar tema' aria-label='A tooltip'>

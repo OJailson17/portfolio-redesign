@@ -1,6 +1,8 @@
 import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react';
+import { useInView } from 'framer-motion';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
 export interface Project {
 	name: string;
@@ -14,8 +16,25 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+
+	useEffect(() => {
+		console.log('Element is in view: ', isInView);
+	}, [isInView]);
+
 	return (
-		<Box maxW={'360px'} borderRadius={'lg'} background={'projectBackground'}>
+		<Box
+			maxW={'360px'}
+			borderRadius={'lg'}
+			background={'projectBackground'}
+			ref={ref}
+			style={{
+				transform: isInView ? 'none' : 'translateX(-200px)',
+				opacity: isInView ? 1 : 0,
+				transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+			}}
+		>
 			<Box w='100%' h='250px' borderRadius={'lg'}>
 				<Image
 					src={project.imageUrl}

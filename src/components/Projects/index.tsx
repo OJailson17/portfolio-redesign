@@ -6,14 +6,7 @@ import { ProjectItem } from './ProjectItem';
 
 export const Projects = () => {
 	return (
-		<Box
-			as='section'
-			id='projetos'
-			w={['85%']}
-			margin={'0 auto'}
-			mt={36}
-			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
-		>
+		<Box as='section' id='projetos' w={['85%']} margin={'0 auto'} mt={36}>
 			<SectionTitle title='Meus Projetos' subtitle='Experiência' />
 
 			<SimpleGrid

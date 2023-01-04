@@ -44,6 +44,9 @@ export const darkTheme = extendTheme({
 			a: {
 				color: 'text',
 			},
+			scrollbars: {
+				background: 'red',
+			},
 		},
 	},
 });

@@ -1,4 +1,6 @@
 import { Box, Flex, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
+import { useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 import { backendTechnologies } from '../../utils/backendTechnologies';
 import { frontendTechnologies } from '../../utils/frontendTechnologies';
@@ -11,15 +13,15 @@ export const Skills = () => {
 		lg: true,
 	});
 
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+
+	useEffect(() => {
+		console.log('Element is in view: ', isInView);
+	}, [isInView]);
+
 	return (
-		<Box
-			as='section'
-			id='tecnologias'
-			w={['85%']}
-			margin={'0 auto'}
-			mt={36}
-			// paddingInline={['30px', '30px', '50px', '50px', '120px']}
-		>
+		<Box as='section' id='tecnologias' w={['85%']} margin={'0 auto'} mt={36}>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 
 			<Flex
@@ -29,6 +31,12 @@ export const Skills = () => {
 				direction={['column', 'row', 'row']}
 				align={!isWideVersion ? 'flex-start' : ''}
 				gap={!isWideVersion ? 10 : 0}
+				ref={ref}
+				style={{
+					transform: isInView ? 'none' : 'translateX(-200px)',
+					opacity: isInView ? 1 : 0,
+					transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+				}}
 			>
 				<Box w='100%'>
 					<Text

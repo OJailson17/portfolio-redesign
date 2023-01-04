@@ -1,6 +1,8 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
+import { useInView } from 'framer-motion';
 
 import Head from 'next/head';
+import { useEffect, useRef } from 'react';
 
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
