@@ -53,16 +53,12 @@ export default function App({ Component, pageProps }: AppProps) {
 					property='og:description'
 					content='Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.'
 				/>
-				{/* <meta
-					property='og:image'
-					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
-				/> */}
 				<meta
 					property='og:image'
-					content='https://ik.imagekit.io/jayllson/biblia-logo.jpg?updatedAt=1627359693683'
+					content='https://jailsondeoliveira.vercel.app/api/og'
 				/>
-				<meta property='og:image:width' content='1840' />
-				<meta property='og:image:height' content='1840' />
+				<meta property='og:image:width' content='600' />
+				<meta property='og:image:height' content='600' />
 
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
@@ -79,7 +75,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				/>
 				<meta
 					property='twitter:image'
-					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
+					content='https://jailsondeoliveira.vercel.app/api/og'
 				/>
 
 				{/* 
