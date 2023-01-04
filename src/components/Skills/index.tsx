@@ -16,10 +16,6 @@ export const Skills = () => {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 
-	useEffect(() => {
-		console.log('Element is in view: ', isInView);
-	}, [isInView]);
-
 	return (
 		<Box as='section' id='tecnologias' w={['85%']} margin={'0 auto'} mt={36}>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
