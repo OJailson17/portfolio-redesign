@@ -36,6 +36,13 @@ export default function App({ Component, pageProps }: AppProps) {
 					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
 				/>
 				<meta
+					property='og:image:secure_url'
+					content='https://ik.imagekit.io/jayllson/profile-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1672802968432'
+				/>
+				<meta property='og:image:type' content='image/jpg' />
+				<meta property='og:image:width' content='400' />
+				<meta property='og:image:height' content='300' />
+				<meta
 					property='og:image:alt'
 					content='Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.'
 				/>
