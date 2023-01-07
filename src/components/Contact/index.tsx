@@ -96,7 +96,7 @@ export const Contact = () => {
 				mt={14}
 				align={['flex-start', 'flex-start', 'flex-start', 'center']}
 				justify={'space-between'}
-				direction={!isWideVersion ? 'column-reverse' : 'row'}
+				direction={['column-reverse', 'column-reverse', 'row']}
 				gap={!isWideVersion ? 10 : 0}
 			>
 				<Box

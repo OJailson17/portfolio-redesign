@@ -10,7 +10,7 @@ export const Projects = () => {
 			<SectionTitle title='Meus Projetos' subtitle='Experiência' />
 
 			<SimpleGrid
-				columns={[1, 2, 2, 3, 3]}
+				columns={[1, 1, 2, 3, 3]}
 				spacing={[10, 10, 10, 10, 14]}
 				mt={36}
 			>
