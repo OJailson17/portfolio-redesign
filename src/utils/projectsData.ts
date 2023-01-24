@@ -22,7 +22,7 @@ export const projects: Project[] = [
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/food-delivery-home.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670131797221',
 		code: 'https://github.com/OJailson17/food_delivery',
-		demo: 'https://ojailson17.github.io/food-delivery-warning/',
+		demo: 'https://food-delivery-jso.vercel.app/',
 		techs: ['NextJS', 'Typescript', 'Stripe', 'Redux', 'Styled Components'],
 	},
 	{
