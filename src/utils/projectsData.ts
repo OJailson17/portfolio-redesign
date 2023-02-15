@@ -26,12 +26,12 @@ export const projects: Project[] = [
 		techs: ['NextJS', 'Typescript', 'Stripe', 'Redux', 'Styled Components'],
 	},
 	{
-		name: 'Handle Landing Page',
+		name: 'JO Dictionary',
 		imageUrl:
-			'https://ik.imagekit.io/jayllson/huddle-landing-page_oDP23v96_.png?updatedAt=1634095612321',
-		code: 'https://github.com/OJailson17/Huddle-Landing-Page',
-		demo: 'https://huddle-landing-page-front-challenge.vercel.app/',
-		techs: ['CSS', 'HTML'],
+			'https://ik.imagekit.io/jayllson/jo-dictionary-home-screenshot_HLMI9HF1D.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676427210063',
+		code: 'https://github.com/OJailson17/react-dictionary',
+		demo: 'https://jodictionary.netlify.app/',
+		techs: ['ReactJS', 'Typescript', 'Chakra UI'],
 	},
 	{
 		name: 'Rock Paper Scissors',
