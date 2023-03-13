@@ -2,7 +2,7 @@ import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export interface Project {
 	name: string;

@@ -1,9 +1,3 @@
-interface EmailProps {
-	name: string;
-	email: string;
-	message: string;
-}
-
 export const emailSchemaText = (
 	name: string,
 	email: string,

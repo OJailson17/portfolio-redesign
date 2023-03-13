@@ -1,6 +1,6 @@
 import { Box, Flex, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import { backendTechnologies } from '../../utils/backendTechnologies';
 import { frontendTechnologies } from '../../utils/frontendTechnologies';

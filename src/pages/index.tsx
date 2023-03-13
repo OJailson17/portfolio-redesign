@@ -1,5 +1,4 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
-import e from 'cors';
 import { useInView } from 'framer-motion';
 
 import Head from 'next/head';

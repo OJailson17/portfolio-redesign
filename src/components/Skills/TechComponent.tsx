@@ -1,4 +1,4 @@
-import { Box, Text, keyframes } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 interface TechComponentProps {
 	tech: string;
