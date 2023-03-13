@@ -38,12 +38,14 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 		oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 		const accessToken = oAuth2Client.getAccessToken();
 
+		const userEmail = process.env.NODEMAILER_USER_EMAIL;
+
 		// Create the transport
 		const transport = nodemailer.createTransport({
 			service: 'gmail',
 			auth: {
 				type: 'OAUTH2',
-				user: 'jaylsono11@gmail.com',
+				user: `${userEmail}`,
 				clientId: CLIENT_ID,
 				clientSecret: CLIENT_SECRET,
 				refreshToken: REFRESH_TOKEN,
@@ -54,9 +56,11 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 		// Body data
 		const { name, email, subject, message } = req.body;
 
+		const userEmailDest = process.env.NODEMAILER_USER_EMAIL_DEST;
+
 		const mailOptions = {
 			from: `${name} <${email}>`,
-			to: 'jaylsono17@gmail.com',
+			to: `${userEmailDest}`,
 			subject: subject,
 			text: emailSchemaText(name, email, message),
 			html: emailSchemaHTML(name, email, message),
