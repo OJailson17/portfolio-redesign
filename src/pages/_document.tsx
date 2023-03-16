@@ -41,7 +41,7 @@ export default function Document() {
 					rel='icon'
 					type='image/png'
 					sizes='192x192'
-					href='/android-chore-192x192.png'
+					href='/android-chrome-192x192.png'
 				/>
 				<link
 					rel='icon'
