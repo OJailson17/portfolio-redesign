@@ -10,6 +10,14 @@ export const projects: Project[] = [
 		techs: ['Material UI', 'ReactJS', 'Styled Components'],
 	},
 	{
+		name: 'Reading Dashboard',
+		imageUrl:
+			'https://ik.imagekit.io/jayllson/reading-dashboard.png?updatedAt=1679512678517',
+		code: 'https://github.com/OJailson17/reading-dashboard',
+		demo: 'https://readingdashboard.vercel.app',
+		techs: ['NextJs', 'Typescript', 'Styled Components', 'Notion API'],
+	},
+	{
 		name: 'Coffee Delivery',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/coffee-delivery-home.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666657729078',
@@ -32,14 +40,6 @@ export const projects: Project[] = [
 		code: 'https://github.com/OJailson17/react-dictionary',
 		demo: 'https://jodictionary.netlify.app/',
 		techs: ['ReactJS', 'Typescript', 'Chakra UI'],
-	},
-	{
-		name: 'Rock Paper Scissors',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/rock-paper-scissors-win.png?updatedAt=1635059789366',
-		code: 'https://github.com/OJailson17/rock-paper-scissor',
-		demo: 'https://rockpaperscissorbeta.netlify.app/',
-		techs: ['CSS', 'HTML', 'Javascript'],
 	},
 	{
 		name: 'Weather Website',
