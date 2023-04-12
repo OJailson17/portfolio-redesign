@@ -34,20 +34,20 @@ export const projects: Project[] = [
 		techs: ['NextJS', 'Typescript', 'Stripe', 'Redux', 'Styled Components'],
 	},
 	{
+		name: 'Pricing Table',
+		imageUrl:
+			'https://ik.imagekit.io/jayllson/pricing-table-screenshot_o_SZbaMJ-.png?updatedAt=1681175982083',
+		code: 'https://github.com/OJailson17/pricing-table',
+		demo: 'https://pricing-table-jso.netlify.app/',
+		techs: ['ReactJS', 'TailwindCSS'],
+	},
+	{
 		name: 'JO Dictionary',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/jo-dictionary-home-screenshot_HLMI9HF1D.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676427210063',
 		code: 'https://github.com/OJailson17/react-dictionary',
 		demo: 'https://jodictionary.netlify.app/',
 		techs: ['ReactJS', 'Typescript', 'Chakra UI'],
-	},
-	{
-		name: 'Weather Website',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/weather-app-initial.png?updatedAt=1635060611647',
-		code: 'https://github.com/OJailson17/weather-website-2.0',
-		demo: 'https://weatherwebappbeta.vercel.app/',
-		techs: ['ReactJS'],
 	},
 	{
 		name: 'Bíblia Sagrada App',
