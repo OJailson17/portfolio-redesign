@@ -80,6 +80,7 @@ export const Contact = () => {
 		<Box
 			as='section'
 			id='contato'
+			maxW={1600}
 			w={['85%']}
 			margin={'0 auto'}
 			mt={36}

@@ -17,7 +17,7 @@ export const Skills = () => {
 	const isInView = useInView(ref, { once: true });
 
 	return (
-		<Box as='section' id='tecnologias' w={['85%']} margin={'0 auto'} mt={36}>
+		<Box as='section' id='tecnologias' maxW={1600} w={['85%']} margin={'0 auto'} mt={36}>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 
 			<Flex
