@@ -14,6 +14,8 @@ import React from 'react';
 
 import { useTheme } from '../../context/themeContext';
 
+import heroImg from '../../../public/assets/hero-image.svg'
+
 export const Hero = () => {
 	const { theme } = useTheme();
 
@@ -116,10 +118,8 @@ export const Hero = () => {
 
 			<Box display={['none', 'none', 'block']}>
 				<Image
-					src={'/assets/hero-image.svg'}
+					src={heroImg}
 					alt=''
-					width={'545'}
-					height={'496'}
 				/>
 			</Box>
 		</Flex>
