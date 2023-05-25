@@ -42,6 +42,7 @@ export const Header = () => {
 		<Flex
 			as={'header'}
 			animation={animation}
+			maxW={1600}
 			w={['85%']}
 			margin={'0 auto'}
 			paddingTop={10}
