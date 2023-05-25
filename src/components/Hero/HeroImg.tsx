@@ -5,16 +5,17 @@ export const HeroImg = () => {
   return (
     <Box
 				position={'relative'}
-				width={'545px'}
+				maxWidth={545}
+				width={['100%', '100%', '100%', '100%']}
 				height={'496px'}
 				>
 					{/* Back */}
 					<Box
 					  position={'absolute'}
-						width={'341px'}
-						height={'398px'}
-						left={'111.88px'}
-						top={'80.21px'}
+						width={['62%', '62%', '75%','75%', '62%']}
+						height={['80%', '80%', '60%', '70%', '80%']}
+						left={'20%'}
+						top={'16%'}
 						background={'#7E74F1'}
 						borderRadius={'16px'}
 						transform={'rotate(-11deg)'}
@@ -23,10 +24,10 @@ export const HeroImg = () => {
 					 {/* Front */}
 					 <Box 
 					   position={'absolute'}
-						 width={'336px'}
-						 height={'400px'}
-						 left={'123px'}
-						 top={'78px'}
+						 width={['61%', '61%', '75%', '74%', '61%']}
+						 height={['80%', '80%', '60%', '70%', '80%']}
+						 left={'22%'}
+						 top={'15%'}
 						 background={'#EAE6FE'}
 						 borderRadius={'16px'}
 					 >
@@ -35,12 +36,12 @@ export const HeroImg = () => {
 						   position={'absolute'}
 							 left={'0'}
 							 right={'27%'}
-							 top={'36%'}
+							 top={'40%'}
 							 bottom={'0%'}
 							 backgroundImage={'/assets/hero-profile.png'}
-							 backgroundRepeat='none'
+							 backgroundRepeat='no-repeat'
 							 objectFit={'cover'}
-							 backgroundSize='cover'
+							 backgroundSize='contain'
 							 borderLeftRadius={'16px'}
 						  />
 

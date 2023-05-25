@@ -39,13 +39,14 @@ export const Hero = () => {
 		<Flex
 			as={motion.section}
 			animation={animation}
-			w={['85%']}
+			maxW={1600}
+			w={['85%' ,'85%', '90%', '90%', '85%']}
 			margin={'0 auto'}
 			mt={'36'}
 			align={!isWideVersion ? 'flex-start' : 'center'}
 			justify={'space-between'}
 		>
-			<Box w={['100%', '100%', '50%']}>
+			<Box width={['100%', '100%', '100%', '100%', '100%']}>
 				<Flex align={'center'} gap={4} direction={'row'}>
 					<Box width={4} height={0.5} background='#D9D9D9' />
 					<Text
@@ -116,9 +117,9 @@ export const Hero = () => {
 				</HStack>
 			</Box>
 
-			<Box display={['none', 'none', 'block']}>
+			<Flex display={['none', 'none', 'flex']} alignItems={'center'} justifyContent={'center'} width={['100%', '100%', '100%', '90%', '100%']}>
 				<HeroImg />
-			</Box>
+			</Flex>
 		</Flex>
 	);
 };
