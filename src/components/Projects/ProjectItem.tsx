@@ -1,5 +1,13 @@
-import { Box, Button, Flex, HStack, Image, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Flex,
+	HStack,
+	Image as ChakraImage,
+	Text,
+} from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
+import Image from 'next/image';
 
 import Link from 'next/link';
 import { useRef } from 'react';
@@ -31,15 +39,20 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 				transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
 			}}
 		>
-			<Box w='100%' h='250px' borderRadius={'lg'}>
+			<Box w='100%' h='250px' borderRadius={'lg'} position='relative'>
 				<Image
+					// as={Image}
 					src={project.imageUrl}
 					alt=''
-					objectFit={'cover'}
-					w='100%'
-					h='100%'
-					borderTopLeftRadius={'lg'}
-					borderTopRightRadius={'lg'}
+					fill
+					style={{
+						objectFit: 'cover',
+						borderRadius: '8px',
+					}}
+					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+					priority={
+						project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
+					}
 				/>
 			</Box>
 
