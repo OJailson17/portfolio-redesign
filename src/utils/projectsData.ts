@@ -54,6 +54,7 @@ export const projects: Project[] = [
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/bible-app-initial.png?updatedAt=1635062349290',
 		code: 'https://github.com/OJailson17/holy-blible-react-native',
+		demo: 'https://github.com/OJailson17/holy-blible-react-native/releases/download/v1.0-beta/biblia-sagrada-app.apk',
 		techs: ['Expo', 'React Native'],
 	},
 ];
