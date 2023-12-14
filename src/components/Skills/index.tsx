@@ -11,7 +11,7 @@ export const Skills = () => {
 	const ref = useRef(null);
 
 	return (
-		<div>
+		<section id='technologies' className='max-w-[1600px] w-[85%] mx-auto mt-36'>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 
 			<div
@@ -21,11 +21,12 @@ export const Skills = () => {
 				// 	opacity: isInView ? 1 : 0,
 				// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
 				// }}
+				className='flex items-start justify-between flex-col gap-10 mt-14 mb-4 md:flex-row md:gap-0'
 			>
-				<div>
-					<p>Frontend</p>
+				<div className='w-full'>
+					<p className='font-bold text-xl text-label'>Frontend</p>
 
-					<div>
+					<div className='flex flex-col gap-10 mt-8'>
 						{frontendTechnologies.map(tech => (
 							<TechComponent
 								tech={tech.nome}
@@ -36,10 +37,10 @@ export const Skills = () => {
 					</div>
 				</div>
 
-				<div>
-					<p>Backend</p>
+				<div className='w-full'>
+					<p className='font-bold text-xl text-label'>Backend</p>
 
-					<div>
+					<div className='flex flex-col gap-10 mt-8'>
 						{backendTechnologies.map(tech => (
 							<TechComponent
 								tech={tech.nome}
@@ -50,6 +51,6 @@ export const Skills = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

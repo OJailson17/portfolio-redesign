@@ -7,13 +7,13 @@ import { Skills } from '../components/Skills';
 
 export default async function Home() {
 	return (
-		<div>
+		<>
 			<Header />
 			<Hero />
 			<Skills />
 			<Projects />
 			<Contact />
 			<Footer />
-		</div>
+		</>
 	);
 }

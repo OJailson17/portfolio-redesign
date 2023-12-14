@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import '../styles/global.css';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html className={inter.className}>
-			<body>{children}</body>
+			<body className='bg-background scroll-smooth'>{children}</body>
 		</html>
 	);
 }
