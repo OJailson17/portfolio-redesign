@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: 'class',
 	content: [
 		// "./app/**/*.{js,ts,jsx,tsx,mdx}",
 		// "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +9,19 @@ module.exports = {
 		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				background: '#1E1E1E',
+				primary: '#7E74F1',
+				text: '#fff',
+				label: '#787e82',
+				projectBackground: '#181A1B',
+				buttonBackground: '#202324',
+			},
+			backgroundImage: {
+				'hero-image': "url('/assets/hero-profile.png')",
+			},
+		},
 	},
 	plugins: [],
 };
