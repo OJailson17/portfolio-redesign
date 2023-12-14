@@ -1,12 +1,5 @@
-import {
-	Box,
-	Button,
-	Flex,
-	HStack,
-	Image as ChakraImage,
-	Text,
-} from '@chakra-ui/react';
-import { useInView } from 'framer-motion';
+'use client';
+
 import Image from 'next/image';
 
 import Link from 'next/link';
@@ -25,21 +18,17 @@ interface ProjectItemProps {
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
 
 	return (
-		<Box
-			maxW={'360px'}
-			borderRadius={'lg'}
-			background={'projectBackground'}
+		<div
 			ref={ref}
-			style={{
-				transform: isInView ? 'none' : 'translateX(-200px)',
-				opacity: isInView ? 1 : 0,
-				transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-			}}
+			// style={{
+			// 	transform: isInView ? 'none' : 'translateX(-200px)',
+			// 	opacity: isInView ? 1 : 0,
+			// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+			// }}
 		>
-			<Box w='100%' h='250px' borderRadius={'lg'} position='relative'>
+			<div>
 				<Image
 					// as={Image}
 					src={project.imageUrl}
@@ -54,64 +43,30 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 						project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
 					}
 				/>
-			</Box>
+			</div>
 
-			<Box paddingInline={4}>
-				<Text
-					mt={4}
-					fontFamily={"'Plus Jakarta Sans', sans-serif"}
-					fontWeight={'medium'}
-					color={'text'}
-				>
-					{project.name}
-				</Text>
+			<div>
+				<p>{project.name}</p>
 
-				<HStack
-					spacing={4}
-					mt={4}
-					wrap={'wrap'}
-					wordBreak={'break-word'}
-					whiteSpace='initial'
-				>
+				<div>
 					{project.techs.map(tech => (
-						<Text
-							fontSize={14}
-							color={'label'}
-							fontWeight={'medium'}
-							key={tech}
-						>
-							{tech}
-						</Text>
+						<p key={tech}>{tech}</p>
 					))}
-				</HStack>
+				</div>
 
-				<Flex mt={4} mb={4} align={'center'} gap={4}>
+				<div>
 					<Link href={project.demo || project.code} target='_blank'>
-						<Button
-							background={'buttonBackground'}
-							_hover={{
-								filter: 'brightness(90%)',
-							}}
-						>
-							<Text fontSize={14} fontWeight={'medium'}>
-								Demo
-							</Text>
-						</Button>
+						<button>
+							<p>Demo</p>
+						</button>
 					</Link>
 					<Link href={project.code} target='_blank'>
-						<Button
-							background={'buttonBackground'}
-							_hover={{
-								filter: 'brightness(90%)',
-							}}
-						>
-							<Text fontSize={14} fontWeight={'medium'}>
-								Código
-							</Text>
-						</Button>
+						<button>
+							<p>Código</p>
+						</button>
 					</Link>
-				</Flex>
-			</Box>
-		</Box>
+				</div>
+			</div>
+		</div>
 	);
 };

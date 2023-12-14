@@ -1,5 +1,3 @@
-import { Box, Text } from '@chakra-ui/react';
-
 interface TechComponentProps {
 	tech: string;
 	level: string;
@@ -7,25 +5,12 @@ interface TechComponentProps {
 
 export const TechComponent = ({ tech, level }: TechComponentProps) => {
 	return (
-		<Box width={['100%']}>
-			<Text fontWeight={'medium'} fontSize={14} color={'text'}>
-				{tech}
-			</Text>
+		<div>
+			<p>{tech}</p>
 
-			<Box
-				maxW={'300px'}
-				height={2}
-				mt={3}
-				background='#cfd7db'
-				borderRadius={'full'}
-			>
-				<Box
-					width={level}
-					height={2}
-					background='#7E74F1'
-					borderRadius={'full'}
-				/>
-			</Box>
-		</Box>
+			<div>
+				<div />
+			</div>
+		</div>
 	);
 };

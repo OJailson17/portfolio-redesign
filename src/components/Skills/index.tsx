@@ -1,5 +1,5 @@
-import { Box, Flex, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
-import { useInView } from 'framer-motion';
+'use client';
+
 import { useRef } from 'react';
 
 import { backendTechnologies } from '../../utils/backendTechnologies';
@@ -8,43 +8,24 @@ import { SectionTitle } from '../SectionTitle';
 import { TechComponent } from './TechComponent';
 
 export const Skills = () => {
-	const isWideVersion = useBreakpointValue({
-		base: false,
-		lg: true,
-	});
-
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
 
 	return (
-		<Box as='section' id='tecnologias' maxW={1600} w={['85%']} margin={'0 auto'} mt={36}>
+		<div>
 			<SectionTitle title='Tecnologias & Ferramentas' subtitle='Habilidades' />
 
-			<Flex
-				mt={14}
-				mb={4}
-				justify={'space-between'}
-				direction={['column', 'column', 'row', 'row']}
-				align={!isWideVersion ? 'flex-start' : ''}
-				gap={!isWideVersion ? 10 : 0}
+			<div
 				ref={ref}
-				style={{
-					transform: isInView ? 'none' : 'translateX(-200px)',
-					opacity: isInView ? 1 : 0,
-					transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-				}}
+				// style={{
+				// 	transform: isInView ? 'none' : 'translateX(-200px)',
+				// 	opacity: isInView ? 1 : 0,
+				// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+				// }}
 			>
-				<Box w='100%'>
-					<Text
-						fontWeight={'bold'}
-						fontSize={20}
-						fontFamily={"'Plus Jakarta Sans', sans-serif"}
-						color={'label'}
-					>
-						Frontend
-					</Text>
+				<div>
+					<p>Frontend</p>
 
-					<VStack spacing={10} mt={8}>
+					<div>
 						{frontendTechnologies.map(tech => (
 							<TechComponent
 								tech={tech.nome}
@@ -52,20 +33,13 @@ export const Skills = () => {
 								key={tech.nome}
 							/>
 						))}
-					</VStack>
-				</Box>
+					</div>
+				</div>
 
-				<Box w='100%'>
-					<Text
-						fontWeight={'bold'}
-						fontSize={20}
-						fontFamily={"'Plus Jakarta Sans', sans-serif"}
-						color={'label'}
-					>
-						Backend
-					</Text>
+				<div>
+					<p>Backend</p>
 
-					<VStack spacing={10} mt={8}>
+					<div>
 						{backendTechnologies.map(tech => (
 							<TechComponent
 								tech={tech.nome}
@@ -73,9 +47,9 @@ export const Skills = () => {
 								key={tech.nome}
 							/>
 						))}
-					</VStack>
-				</Box>
-			</Flex>
-		</Box>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };

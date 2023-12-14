@@ -4,8 +4,9 @@ import { google } from 'googleapis';
 import nodemailer, { TransportOptions } from 'nodemailer';
 import Cors from 'cors';
 
-import { emailSchemaHTML, emailSchemaText } from '../../utils/emailSchema';
-import initMiddleware from '../../lib/init-middleware';
+import { emailSchemaHTML, emailSchemaText } from '../../../utils/emailSchema';
+import initMiddleware from '../../../lib/init-middleware';
+import { NextResponse } from 'next/server';
 
 // Initialize the cors middleware
 const cors = initMiddleware(
@@ -29,7 +30,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 // Function to send the email
-const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
 	// Run cors
 	await cors(req, res);
 
@@ -68,14 +69,16 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 
 		// Send the email passing the options
 		const result = await transport.sendMail(mailOptions).catch(error => {
-			res.json(error);
+			return NextResponse.json(error);
 		});
 
-		res.json({ response: 'Mensagem enviada com sucesso', status: 200, result });
+		return NextResponse.json({
+			response: 'Mensagem enviada com sucesso',
+			status: 200,
+			result,
+		});
 	} catch (error) {
-		res.json({ error });
 		console.log(error);
+		return NextResponse.json({ error });
 	}
-};
-
-export default sendEmail;
+}
