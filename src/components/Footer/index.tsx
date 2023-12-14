@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export const Footer = () => {
 	return (
-		<div>
-			<div>
+		<footer className='w-[85%] mx-auto mt-36 flex items-center justify-center flex-col'>
+			<div className='flex gap-8'>
 				<Link href={'https://www.instagram.com/ojailson17'} target='_blank'>
 					<Image
 						src={'/assets/instagram-footer.svg'}
@@ -31,7 +31,9 @@ export const Footer = () => {
 				</Link>
 			</div>
 
-			<p>&copy; 2023 - Jailson de Oliveira</p>
-		</div>
+			<p className='mt-6 mb-20 text-label text-sm'>
+				&copy; 2023 - Jailson de Oliveira
+			</p>
+		</footer>
 	);
 };
