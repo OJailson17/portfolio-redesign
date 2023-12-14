@@ -16,7 +16,7 @@ export const Hero = () => {
 				</div>
 
 				<p>
-					Jailson de <p>Oliveira.</p>
+					Jailson de <span>Oliveira.</span>
 				</p>
 
 				<p>
