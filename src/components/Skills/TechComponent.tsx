@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import clsx from 'clsx';
 
 interface TechComponentProps {
 	tech: string;
@@ -18,7 +19,10 @@ export const TechComponent = ({ tech, level }: TechComponentProps) => {
 			<p className='font-medium text-sm text-text'>{tech}</p>
 
 			<div className='max-w-[300px] h-2 mt-3 bg-[#cfd7db] rounded-full'>
-				<div className={dynamicClass} />
+				<div
+					className={'h-2 bg-[#7E74F1] rounded-full'}
+					style={{ width: `${level}` }}
+				/>
 			</div>
 		</div>
 	);

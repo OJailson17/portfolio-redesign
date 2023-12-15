@@ -64,18 +64,23 @@ export const Contact = () => {
 
 	return (
 		<div
-			id='contato'
+			id='contact'
 			ref={ref}
-			style={{
-				transform: isInView ? 'none' : 'translateX(-200px)',
-				opacity: isInView ? 1 : 0,
-				transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-			}}
+			// style={{
+			// 	transform: isInView ? 'none' : 'translateX(-200px)',
+			// 	opacity: isInView ? 1 : 0,
+			// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+			// }}
+			className='max-w-[1600px] w-[85%] mx-auto mt-36'
 		>
 			<SectionTitle title='Quer me contratar?' subtitle='Contato' />
 
-			<div>
-				<div onSubmit={handleSubmit(handleSendEmail)}>
+			<div className='mt-14 flex items-start justify-between flex-col-reverse gap-10 lg:items-center lg:gap-0 md:flex-row'>
+				<form
+					onSubmit={handleSubmit(handleSendEmail)}
+					className='w-full md:w-[90%] lg:w-1/2'
+					autoComplete='off'
+				>
 					<InputComponent
 						placeholder='Nome'
 						{...register('name')}
@@ -92,18 +97,27 @@ export const Contact = () => {
 						error={errors?.subject}
 					/>
 
-					<form>
-						<textarea placeholder='Mensagem' {...register('message')} />
-						<span>{errors?.message?.message}</span>
-					</form>
+					<div>
+						<textarea
+							placeholder='Mensagem'
+							{...register('message')}
+							className='mt-4 w-full rounded-md px-4 py-2 max-w-[600px] h-48 bg-transparent border-[1px] border-[#656D72] resize-none text-text font-normal outline-none focus:border-primary focus:border-2 hover:border-primary'
+						/>
+						<span className='text-red-500 block'>
+							{errors?.message?.message}
+						</span>
+					</div>
 
-					<button type='submit'>
-						<p>Enviar</p>
+					<button
+						type='submit'
+						className='w-full max-w-[600px] h-12 mt-6 bg-primary rounded-md hover:brightness-75'
+					>
+						<p className='text-[#F5F3FE] text-sm font-medium'>Enviar</p>
 					</button>
-				</div>
+				</form>
 
-				<div>
-					<p>
+				<div className='w-full md:w-[70%] lg:w-[40%]'>
+					<p className='text-text'>
 						Se você gostou do meu trabalho e quer me contratar para um projeto
 						seu, ou até mesmo para sua empresa, ficarei feliz em trabalharmos
 						juntos. Fique a vontade e me mande uma mensagem através do
@@ -111,11 +125,13 @@ export const Contact = () => {
 						email
 					</p>
 
-					<div>
+					<div className='mt-4 flex gap-4'>
 						<div>
 							<Image src={'/assets/mail.svg'} alt='' width={24} height={24} />
 						</div>
-						<p>jaylsono17@gmail.com</p>
+						<p className='text-sm font-normal text-label'>
+							jaylsono17@gmail.com
+						</p>
 					</div>
 				</div>
 			</div>
