@@ -6,7 +6,7 @@ import Cors from 'cors';
 
 import { emailSchemaHTML, emailSchemaText } from '../../../utils/emailSchema';
 import initMiddleware from '../../../lib/init-middleware';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 // Initialize the cors middleware
 const cors = initMiddleware(
@@ -30,55 +30,57 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 // Function to send the email
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
-	// Run cors
-	await cors(req, res);
+export async function POST(req: NextRequest, res: NextResponse) {
+	// // Run cors
+	// await cors(req, res);
 
-	try {
-		// Set the credentials
-		oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-		const accessToken = oAuth2Client.getAccessToken();
+	// try {
+	// 	// Set the credentials
+	// 	oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+	// 	const accessToken = oAuth2Client.getAccessToken();
 
-		const userEmail = process.env.NODEMAILER_USER_EMAIL;
+	// 	const userEmail = process.env.NODEMAILER_USER_EMAIL;
 
-		// Create the transport
-		const transport = nodemailer.createTransport({
-			service: 'gmail',
-			auth: {
-				type: 'OAUTH2',
-				user: `${userEmail}`,
-				clientId: CLIENT_ID,
-				clientSecret: CLIENT_SECRET,
-				refreshToken: REFRESH_TOKEN,
-				accessToken: accessToken,
-			},
-		} as TransportOptions);
+	// 	// Create the transport
+	// 	const transport = nodemailer.createTransport({
+	// 		service: 'gmail',
+	// 		auth: {
+	// 			type: 'OAUTH2',
+	// 			user: `${userEmail}`,
+	// 			clientId: CLIENT_ID,
+	// 			clientSecret: CLIENT_SECRET,
+	// 			refreshToken: REFRESH_TOKEN,
+	// 			accessToken: accessToken,
+	// 		},
+	// 	} as TransportOptions);
 
-		// Body data
-		const { name, email, subject, message } = req.body;
+	// 	// Body data
+	// 	const { name, email, subject, message } = req.body;
 
-		const userEmailDest = process.env.NODEMAILER_USER_EMAIL_DEST;
+	// 	const userEmailDest = process.env.NODEMAILER_USER_EMAIL_DEST;
 
-		const mailOptions = {
-			from: `${name} <${email}>`,
-			to: `${userEmailDest}`,
-			subject: subject,
-			text: emailSchemaText(name, email, message),
-			html: emailSchemaHTML(name, email, message),
-		};
+	// 	const mailOptions = {
+	// 		from: `${name} <${email}>`,
+	// 		to: `${userEmailDest}`,
+	// 		subject: subject,
+	// 		text: emailSchemaText(name, email, message),
+	// 		html: emailSchemaHTML(name, email, message),
+	// 	};
 
-		// Send the email passing the options
-		const result = await transport.sendMail(mailOptions).catch(error => {
-			return NextResponse.json(error);
-		});
+	// 	// Send the email passing the options
+	// 	const result = await transport.sendMail(mailOptions).catch(error => {
+	// 		return NextResponse.json(error);
+	// 	});
 
-		return NextResponse.json({
-			response: 'Mensagem enviada com sucesso',
-			status: 200,
-			result,
-		});
-	} catch (error) {
-		console.log(error);
-		return NextResponse.json({ error });
-	}
+	// 	return NextResponse.json({
+	// 		response: 'Mensagem enviada com sucesso',
+	// 		status: 200,
+	// 		result,
+	// 	});
+	// } catch (error) {
+	// 	console.log(error);
+	// 	return NextResponse.json({ error });
+	// }
+
+	return NextResponse.json({});
 }

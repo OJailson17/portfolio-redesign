@@ -1,11 +1,10 @@
 import { ImageResponse } from '@vercel/og';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
-export const config = {
-	runtime: 'experimental-edge',
-};
+export const runtime = 'edge';
 
-async function GET(req: NextApiRequest, res: NextApiResponse) {
+async function GET(req: NextRequest, res: NextResponse) {
 	// try {
 	// 	return new ImageResponse(
 	// 		(
@@ -25,4 +24,6 @@ async function GET(req: NextApiRequest, res: NextApiResponse) {
 	// 		status: 500,
 	// 	});
 	// }
+
+	return NextResponse.json({});
 }
