@@ -19,7 +19,7 @@ module.exports = {
 				buttonBackground: '#202324',
 			},
 			backgroundImage: {
-				'hero-image': "url('/assets/hero-profile.png')",
+				'hero-image': "url('/assets/hero-profile_1.avif')",
 			},
 		},
 	},
