@@ -21,6 +21,10 @@ module.exports = {
 			backgroundImage: {
 				'hero-image': "url('/assets/hero-profile_1.avif')",
 			},
+			fontFamily: {
+				sans: ['var(--font-inter)'],
+				jakarta: ['var(--font-jakarta)'],
+			},
 		},
 	},
 	plugins: [],

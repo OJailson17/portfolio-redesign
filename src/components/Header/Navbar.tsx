@@ -177,16 +177,16 @@ export default function Navbar() {
 			<div
 				className={clsx(
 					' fixed h-full w-screen lg:hidden backdrop-blur-sm top-0 left-0 translate-x-full transition-all ',
-					isSideMenuOpen && '-translate-x-0',
+					isSideMenuOpen && 'translate-x-full',
 				)}
 			>
 				<section className='text-text bg-background flex-col absolute right-0 top-0 h-screen gap-8 z-50 w-[70%] md:w-1/3 flex items-center '>
-					<button
+					<div
 						onClick={() => setMenu(false)}
-						className='absolute right-6 top-5 bg-red-500 mt-8 mb-8 text-3xl cursor-none md:cursor-pointer'
+						className='absolute right-6 top-5 bg-red-500 mt-8 mb-8 text-3xl cursor-pointer'
 					>
 						<IoCloseOutline />
-					</button>
+					</div>
 					<ul className='mt-20'>
 						{navLink.map((link, i) => (
 							<li key={i}>
@@ -210,7 +210,7 @@ export default function Navbar() {
 					<Image
 						width={30}
 						height={30}
-						className='h-8 w-8 rounded-full '
+						className='h-6 w-6 rounded-full md:w-7 md:h-7'
 						src='/assets/sun.svg'
 						alt='avatar-img'
 					/>
@@ -232,6 +232,7 @@ export default function Navbar() {
 						alt='menu icon'
 						width={30}
 						height={30}
+						className='h-6 w-6 rounded-full md:w-7 md:h-7'
 					/>
 				</button>
 			</section>

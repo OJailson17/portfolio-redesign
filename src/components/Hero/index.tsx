@@ -14,13 +14,13 @@ export const Hero = () => {
 		>
 			<div className='w-full'>
 				<div className='flex items-center gap-4 flex-row'>
-					<div className='w-4 h-[0.5px] bg-[#D9D9D9]' />
+					<div className='w-4 h-[2px] bg-[#E2E8F0]' />
 					<p className='font-medium text-xs tracking-[7.5px] leading-6 text-label'>
 						MEU NOME É
 					</p>
 				</div>
 
-				<p className='font-bold text-[44px] mt-4 text-text'>
+				<p className='font-bold text-[44px] mt-4 text-text font-jakarta'>
 					Jailson de <span className='text-primary'>Oliveira.</span>
 				</p>
 

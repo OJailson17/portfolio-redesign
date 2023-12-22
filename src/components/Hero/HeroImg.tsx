@@ -8,7 +8,7 @@ export const HeroImg = () => {
 
 			{/* Front */}
 			<div className='absolute w-[61%] h-[80%] left-[22%] top-[15%] bg-[#EAE6FE] rounded-2xl md:w-[75%] md:h-[60%] lg:w-[74%] lg:h-[70%] xl:w-[61%] xl:h-[80%]'>
-				<div className='absolute left-0 right-[27%] top-[40%] bottom-0 bg-hero-image bg-no-repeat object-cover bg-contain rounded-l-2xl' />
+				<div className='absolute left-0 right-[27%] top-[41%] bottom-0 bg-hero-image bg-no-repeat object-cover bg-contain rounded-l-2xl' />
 			</div>
 		</div>
 	);

@@ -47,7 +47,9 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 			</div>
 
 			<div className='px-4'>
-				<p className='mt-4 font-medium text-text'>{project.name}</p>
+				<p className='mt-4 font-medium text-text font-jakarta'>
+					{project.name}
+				</p>
 
 				<div className='flex gap-4 mt-4 flex-wrap break-words whitespace-normal'>
 					{project.techs.map(tech => (
@@ -59,12 +61,18 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 
 				<div className='mt-4 mb-4 flex items-center gap-4'>
 					<Link href={project.demo || project.code} target='_blank'>
-						<button className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90' tabIndex={-1}>
+						<button
+							className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90'
+							tabIndex={-1}
+						>
 							<p className='text-sm text-text font-medium'>Demo</p>
 						</button>
 					</Link>
 					<Link href={project.code} target='_blank'>
-						<button className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90' tabIndex={-1}>
+						<button
+							className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90'
+							tabIndex={-1}
+						>
 							<p className='text-sm font-medium text-text'>Código</p>
 						</button>
 					</Link>

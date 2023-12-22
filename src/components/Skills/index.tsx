@@ -24,7 +24,7 @@ export const Skills = () => {
 				className='flex items-start justify-between flex-col gap-10 mt-14 mb-4 md:flex-row md:gap-0'
 			>
 				<div className='w-full'>
-					<p className='font-bold text-xl text-label'>Frontend</p>
+					<p className='font-bold text-xl text-label font-jakarta'>Frontend</p>
 
 					<div className='flex flex-col gap-10 mt-8'>
 						{frontendTechnologies.map(tech => (
@@ -38,7 +38,7 @@ export const Skills = () => {
 				</div>
 
 				<div className='w-full'>
-					<p className='font-bold text-xl text-label'>Backend</p>
+					<p className='font-bold text-xl text-label font-jakarta'>Backend</p>
 
 					<div className='flex flex-col gap-10 mt-8'>
 						{backendTechnologies.map(tech => (
