@@ -31,7 +31,7 @@ export const Footer = () => {
 				</Link>
 			</div>
 
-			<p className='mt-6 mb-20 text-label text-sm'>
+			<p className='mt-6 mb-20 text-light-label text-sm dark:text-dark-label'>
 				&copy; 2023 - Jailson de Oliveira
 			</p>
 		</footer>

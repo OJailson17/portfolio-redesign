@@ -45,6 +45,18 @@ export const ThemeContextProvider = ({
 
 	// set the theme state value to local storage
 	useEffect(() => {
+		// if (window) {
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark');
+			// document.documentElement.classList.add('light');
+		} else {
+			if (document.documentElement.classList.contains('dark')) {
+				document.documentElement.classList.remove('dark');
+			}
+
+			document.documentElement.classList.add('dark');
+		}
+		// }
 		localStorage.setItem('@portfolio:theme', theme || '');
 	}, [theme]);
 

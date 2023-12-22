@@ -15,16 +15,19 @@ export const Hero = () => {
 			<div className='w-full'>
 				<div className='flex items-center gap-4 flex-row'>
 					<div className='w-4 h-[2px] bg-[#E2E8F0]' />
-					<p className='font-medium text-xs tracking-[7.5px] leading-6 text-label'>
+					<p className='font-medium text-xs tracking-[7.5px] leading-6 text-light-label dark:text-dark-label'>
 						MEU NOME É
 					</p>
 				</div>
 
-				<p className='font-bold text-[44px] mt-4 text-text font-jakarta'>
-					Jailson de <span className='text-primary'>Oliveira.</span>
+				<p className='font-bold text-[44px] mt-4 text-light-text font-jakarta dark:text-dark-text'>
+					Jailson de{' '}
+					<span className='text-light-primary dark:text-dark-primary'>
+						Oliveira.
+					</span>
 				</p>
 
-				<p className='mt-8 leading-8 text-text'>
+				<p className='mt-8 leading-8 text-light-text dark:text-dark-text'>
 					Sou desenvolvedor web. Gosto de construir tudo, desde sites simples
 					até sites mais complexos. Tenho foco em Front-end e possuo maior
 					proficiência e experiência no ecossistema Javascript

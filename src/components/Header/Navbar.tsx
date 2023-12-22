@@ -143,7 +143,7 @@ import { navLink } from '../../utils/constants/header';
 export default function Navbar() {
 	const [isSideMenuOpen, setMenu] = useState(false);
 
-	const { changeTheme } = useTheme();
+	const { changeTheme, theme } = useTheme();
 
 	return (
 		<nav className='flex justify-between items-center pt-10  w-[85%] mx-auto'>
@@ -154,7 +154,7 @@ export default function Navbar() {
 					{/* logo */}
 					<Link href={'/'}>
 						<Image
-							src={`/assets/logo-light.svg`}
+							src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
 							alt=''
 							width='138'
 							height='54'
@@ -165,7 +165,10 @@ export default function Navbar() {
 				<ul className='flex lg:gap-14'>
 					{navLink.map((link, i) => (
 						<li key={i}>
-							<Link className='hidden lg:block  text-text' href={link.href}>
+							<Link
+								className='hidden lg:block  text-light-text dark:text-dark-text'
+								href={link.href}
+							>
 								{link.label}
 							</Link>
 						</li>
@@ -180,7 +183,7 @@ export default function Navbar() {
 					isSideMenuOpen && 'translate-x-full',
 				)}
 			>
-				<section className='text-text bg-background flex-col absolute right-0 top-0 h-screen gap-8 z-50 w-[70%] md:w-1/3 flex items-center '>
+				<section className='text-light-text bg-background flex-col absolute right-0 top-0 h-screen gap-8 z-50 w-[70%] md:w-1/3 flex items-center dark:text-dark-text '>
 					<div
 						onClick={() => setMenu(false)}
 						className='absolute right-6 top-5 bg-red-500 mt-8 mb-8 text-3xl cursor-pointer'
@@ -211,7 +214,7 @@ export default function Navbar() {
 						width={30}
 						height={30}
 						className='h-6 w-6 rounded-full md:w-7 md:h-7'
-						src='/assets/sun.svg'
+						src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
 						alt='avatar-img'
 					/>
 				</button>
@@ -219,7 +222,7 @@ export default function Navbar() {
 				<Link
 					href='/assets/documents/jailson-de-oliveira-cv.pdf'
 					download
-					className='text-text font-medium text-md'
+					className='text-light-text font-medium text-md dark:text-dark-text'
 				>
 					CV{' '}
 				</Link>
@@ -228,7 +231,7 @@ export default function Navbar() {
 					className='text-3xl cursor-none md:cursor-pointer lg:hidden'
 				>
 					<Image
-						src={`/assets/menu-light.svg`}
+						src={`/assets/menu-${theme === 'light' ? 'dark' : 'light'}.svg`}
 						alt='menu icon'
 						width={30}
 						height={30}

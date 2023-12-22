@@ -11,13 +11,20 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				background: '#1E1E1E',
-				primary: '#7E74F1',
-				text: '#fff',
-				label: '#787e82',
-				projectBackground: '#181A1B',
-				buttonBackground: '#202324',
+				'light-background': '#fff',
+				'light-primary': '#7E74F1',
+				'light-text': '#232E35',
+				'light-label': '#656D72',
+				'light-project-background': '#f1f1f1',
+				'light-button-background': '#d4d9db',
+				'dark-background': '#1E1E1E',
+				'dark-primary': '#7E74F1',
+				'dark-text': '#fff',
+				'dark-label': '#787e82',
+				'dark-project-background': '#181A1B',
+				'dark-button-background': '#202324',
 			},
+
 			backgroundImage: {
 				'hero-image': "url('/assets/hero-profile_1.avif')",
 			},

@@ -101,7 +101,7 @@ export const Contact = () => {
 						<textarea
 							placeholder='Mensagem'
 							{...register('message')}
-							className='mt-4 w-full rounded-md px-4 py-2 max-w-[600px] h-48 bg-transparent border-[1px] border-[#656D72] resize-none text-text font-normal outline-none focus:border-primary focus:border-2 hover:border-primary'
+							className='mt-4 w-full rounded-md px-4 py-2 max-w-[600px] h-48 bg-transparent border-[1px] border-[#656D72] resize-none text-light-text font-normal outline-none focus:border-light-primary focus:border-2 hover:border-light-primary dark:focus:border-dark-primary dark:hover:border-dark-primary dark:text-dark-text'
 						/>
 						<span className='text-red-500 block'>
 							{errors?.message?.message}
@@ -110,14 +110,14 @@ export const Contact = () => {
 
 					<button
 						type='submit'
-						className='w-full max-w-[600px] h-12 mt-6 bg-primary rounded-md hover:brightness-75'
+						className='w-full max-w-[600px] h-12 mt-6 bg-light-primary rounded-md hover:brightness-75 dark:bg-dark-primary'
 					>
 						<p className='text-[#F5F3FE] text-sm font-medium'>Enviar</p>
 					</button>
 				</form>
 
 				<div className='w-full md:w-[70%] lg:w-[40%]'>
-					<p className='text-text'>
+					<p className='text-light-text dark:text-dark-text'>
 						Se você gostou do meu trabalho e quer me contratar para um projeto
 						seu, ou até mesmo para sua empresa, ficarei feliz em trabalharmos
 						juntos. Fique a vontade e me mande uma mensagem através do
@@ -129,7 +129,7 @@ export const Contact = () => {
 						<div>
 							<Image src={'/assets/mail.svg'} alt='' width={24} height={24} />
 						</div>
-						<p className='text-sm font-normal text-label'>
+						<p className='text-sm font-normal text-light-label dark:text-dark-label'>
 							jaylsono17@gmail.com
 						</p>
 					</div>

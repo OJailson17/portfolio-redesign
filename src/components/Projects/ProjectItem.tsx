@@ -27,7 +27,7 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 			// 	opacity: isInView ? 1 : 0,
 			// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
 			// }}
-			className='max-w-[360px] rounded-lg bg-projectBackground'
+			className='max-w-[360px] rounded-lg bg-light-project-background dark:bg-dark-project-background'
 		>
 			<div className='w-full h-[250px] rounded-lg relative'>
 				<Image
@@ -47,13 +47,16 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 			</div>
 
 			<div className='px-4'>
-				<p className='mt-4 font-medium text-text font-jakarta'>
+				<p className='mt-4 font-medium text-light-text font-jakarta dark:text-dark-text'>
 					{project.name}
 				</p>
 
 				<div className='flex gap-4 mt-4 flex-wrap break-words whitespace-normal'>
 					{project.techs.map(tech => (
-						<p key={tech} className='text-sm text-label font-medium'>
+						<p
+							key={tech}
+							className='text-sm text-light-label font-medium dark:text-dark-label'
+						>
 							{tech}
 						</p>
 					))}
@@ -62,18 +65,22 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 				<div className='mt-4 mb-4 flex items-center gap-4'>
 					<Link href={project.demo || project.code} target='_blank'>
 						<button
-							className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90'
+							className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
 							tabIndex={-1}
 						>
-							<p className='text-sm text-text font-medium'>Demo</p>
+							<p className='text-sm text-light-text font-medium dark:text-dark-text'>
+								Demo
+							</p>
 						</button>
 					</Link>
 					<Link href={project.code} target='_blank'>
 						<button
-							className='min-w-[40px] h-10 px-4 rounded-md bg-buttonBackground hover:brightness-90'
+							className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
 							tabIndex={-1}
 						>
-							<p className='text-sm font-medium text-text'>Código</p>
+							<p className='text-sm font-medium text-light-text dark:text-dark-text'>
+								Código
+							</p>
 						</button>
 					</Link>
 				</div>
