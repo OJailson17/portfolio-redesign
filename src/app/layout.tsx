@@ -1,4 +1,5 @@
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '../styles/global.css';
 import { ThemeContextProvider } from '../context/themeContext';
 
@@ -30,9 +31,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html className={`${inter.variable} ${jakarta.variable} dark scroll-smooth`}>
+		<html
+			className={`${inter.variable} ${jakarta.variable} dark scroll-smooth`}
+		>
 			<body className='bg-light-background dark:bg-dark-background'>
-				<ThemeContextProvider>{children}</ThemeContextProvider>
+				<ThemeContextProvider>
+					<SpeedInsights />
+					{children}
+				</ThemeContextProvider>
 			</body>
 		</html>
 	);
