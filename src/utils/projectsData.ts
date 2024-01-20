@@ -42,6 +42,14 @@ export const projects: Project[] = [
 		techs: ['ReactJS', 'TailwindCSS'],
 	},
 	{
+		name: 'Cat Wiki',
+		imageUrl:
+			'https://ik.imagekit.io/jayllson/home-cat-wiki-screenshot_7AA6yg6MM?updatedAt=1705735577515',
+		code: 'https://github.com/OJailson17/cat-wiki',
+		demo: 'https://cat-wiki-jso.netlify.app',
+		techs: ['NextJS', 'TailwindCSS'],
+	},
+	{
 		name: 'JO Dictionary',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/jo-dictionary-home-screenshot_HLMI9HF1D.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676427210063',
