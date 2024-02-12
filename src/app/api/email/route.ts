@@ -7,6 +7,7 @@ import Cors from 'cors';
 import { emailSchemaHTML, emailSchemaText } from '../../../utils/emailSchema';
 import initMiddleware from '../../../lib/init-middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import { sanitize } from 'isomorphic-dompurify';
 
 // Initialize the cors middleware
 const cors = initMiddleware(
@@ -63,8 +64,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
 	// 		from: `${name} <${email}>`,
 	// 		to: `${userEmailDest}`,
 	// 		subject: subject,
-	// 		text: emailSchemaText(name, email, message),
-	// 		html: emailSchemaHTML(name, email, message),
+	// 		text: emailSchemaText(sanitize(name), sanitize(email), sanitize(message)),
+	// 		html: emailSchemaHTML(sanitize(name), sanitize(email), sanitize(message)),
 	// 	};
 
 	// 	// Send the email passing the options
