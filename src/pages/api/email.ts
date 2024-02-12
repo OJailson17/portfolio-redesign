@@ -3,6 +3,7 @@ import { google } from 'googleapis';
 
 import nodemailer, { TransportOptions } from 'nodemailer';
 import Cors from 'cors';
+import { sanitize } from 'isomorphic-dompurify';
 
 import { emailSchemaHTML, emailSchemaText } from '../../utils/emailSchema';
 import initMiddleware from '../../lib/init-middleware';
@@ -62,8 +63,8 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 			from: `${name} <${email}>`,
 			to: `${userEmailDest}`,
 			subject: subject,
-			text: emailSchemaText(name, email, message),
-			html: emailSchemaHTML(name, email, message),
+			text: emailSchemaText(sanitize(name), sanitize(email), sanitize(message)),
+			html: emailSchemaHTML(sanitize(name), sanitize(email), sanitize(message)),
 		};
 
 		// Send the email passing the options
