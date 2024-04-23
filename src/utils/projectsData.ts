@@ -12,10 +12,10 @@ export const projects: Project[] = [
 	{
 		name: 'Reading Dashboard',
 		imageUrl:
-			'https://ik.imagekit.io/jayllson/reading-dashboard.png?updatedAt=1679512678517',
+			'https://ik.imagekit.io/jayllson/reading-dashboard-v2.png?updatedAt=1713845245385',
 		code: 'https://github.com/OJailson17/reading-dashboard',
 		demo: 'https://readingdashboard.vercel.app',
-		techs: ['NextJs', 'Typescript', 'Styled Components', 'Notion API'],
+		techs: ['NextJs', 'Typescript', 'TailwindCSS', 'Notion API'],
 	},
 	{
 		name: 'Coffee Delivery',
