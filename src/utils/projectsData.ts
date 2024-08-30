@@ -2,14 +2,6 @@ import { Project } from '../components/Projects/ProjectItem';
 
 export const projects: Project[] = [
 	{
-		name: 'Bíblia Sagrada Website',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/biblia-screen-home-page.png?updatedAt=1634095113671',
-		code: 'https://github.com/OJailson17/holy-bible-website',
-		demo: 'https://bibliasagrada.vercel.app/',
-		techs: ['Material UI', 'ReactJS', 'Styled Components'],
-	},
-	{
 		name: 'Reading Dashboard',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/reading-dashboard.png?updatedAt=1679512678517',
@@ -17,6 +9,15 @@ export const projects: Project[] = [
 		demo: 'https://readingdashboard.vercel.app',
 		techs: ['NextJs', 'Typescript', 'Styled Components', 'Notion API'],
 	},
+	{
+		name: 'Bíblia Sagrada Website',
+		imageUrl:
+			'https://ik.imagekit.io/jayllson/biblia-screen-home-page.png?updatedAt=1634095113671',
+		code: 'https://github.com/OJailson17/holy-bible-website',
+		demo: 'https://bibliasagrada.vercel.app/',
+		techs: ['Material UI', 'ReactJS', 'Styled Components'],
+	},
+
 	{
 		name: 'Coffee Delivery',
 		imageUrl:

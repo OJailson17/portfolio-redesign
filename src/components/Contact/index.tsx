@@ -3,14 +3,13 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import Image from 'next/image';
 import * as yup from 'yup';
 
 import { SectionTitle } from '../SectionTitle';
 import { InputComponent } from './InputComponent';
-import { onSendEmail } from './submitEmail';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { MailIcon } from '../Icons/Mail';
 
 export interface FormDataProps {
 	name: string;
@@ -127,7 +126,7 @@ export const Contact = () => {
 
 					<div className='mt-4 flex gap-4'>
 						<div>
-							<Image src={'/assets/mail.svg'} alt='' width={24} height={24} />
+							<MailIcon />
 						</div>
 						<p className='text-sm font-normal text-light-label dark:text-dark-label'>
 							jaylsono17@gmail.com

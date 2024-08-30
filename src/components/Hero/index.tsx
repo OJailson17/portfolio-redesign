@@ -1,11 +1,15 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
-import React from 'react';
 
 import { HeroImg } from './HeroImg';
+import { InstagramIcon } from '../Icons/Instagram';
+import { useTheme } from '../../context/themeContext';
+import { GithubIcon } from '../Icons/Github';
+import { LinkedInIcon } from '../Icons/LinkedIn';
 
 export const Hero = () => {
-	// const { theme } = useTheme();
+	const { theme } = useTheme();
 
 	return (
 		<section
@@ -35,32 +39,17 @@ export const Hero = () => {
 
 				<div className='flex gap-8 mt-10'>
 					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
-						<Image
-							src={`/assets/instagram-light.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
+						<InstagramIcon theme={!theme ? 'dark' : theme} />
 					</Link>
 					<Link href={'https://github.com/OJailson17'} target='_blank'>
-						<Image
-							src={`/assets/github-light.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
+						<GithubIcon theme={!theme ? 'dark' : theme} />
 					</Link>
 
 					<Link
 						href={'https://www.linkedin.com/in/ojailson17/'}
 						target='_blank'
 					>
-						<Image
-							src={`/assets/linkedin-light.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
+						<LinkedInIcon theme={!theme ? 'dark' : theme} />
 					</Link>
 				</div>
 			</div>

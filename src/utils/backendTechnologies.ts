@@ -9,7 +9,7 @@ export const backendTechnologies = [
 	},
 	{
 		nome: 'NestJS',
-		nível: '50%',
+		nível: '60%',
 	},
 	{
 		nome: 'MongoDb',

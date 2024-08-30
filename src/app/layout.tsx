@@ -34,7 +34,7 @@ export default function RootLayout({
 		<html
 			className={`${inter.variable} ${jakarta.variable} dark scroll-smooth`}
 		>
-			<body className='bg-light-background dark:bg-dark-background'>
+			<body className='bg-light-background dark:bg-dark-background  overflow-x-hidden'>
 				<ThemeContextProvider>
 					<SpeedInsights />
 					{children}
