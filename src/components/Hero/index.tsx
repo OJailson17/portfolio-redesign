@@ -1,16 +1,7 @@
-'use client';
-
-import Link from 'next/link';
-
 import { HeroImg } from './HeroImg';
-import { InstagramIcon } from '../Icons/Instagram';
-import { useTheme } from '../../context/themeContext';
-import { GithubIcon } from '../Icons/Github';
-import { LinkedInIcon } from '../Icons/LinkedIn';
+import { HeroLinks } from './HeroLinks';
 
 export const Hero = () => {
-	const { theme } = useTheme();
-
 	return (
 		<section
 			id='hero'
@@ -37,21 +28,7 @@ export const Hero = () => {
 					proficiência e experiência no ecossistema Javascript
 				</p>
 
-				<div className='flex gap-8 mt-10'>
-					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
-						<InstagramIcon theme={!theme ? 'dark' : theme} />
-					</Link>
-					<Link href={'https://github.com/OJailson17'} target='_blank'>
-						<GithubIcon theme={!theme ? 'dark' : theme} />
-					</Link>
-
-					<Link
-						href={'https://www.linkedin.com/in/ojailson17/'}
-						target='_blank'
-					>
-						<LinkedInIcon theme={!theme ? 'dark' : theme} />
-					</Link>
-				</div>
+				<HeroLinks />
 			</div>
 
 			<div className='hidden items-center justify-center w-full md:flex lg:w-[90%] 2xl:w-full'>

@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-import { FormDataProps } from '.';
+import { FormDataProps } from './ContactForm';
 
 type OnSubmitProps = {
 	data: FormDataProps;

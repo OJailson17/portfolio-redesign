@@ -1,119 +1,14 @@
-'use client';
-
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-
-import * as yup from 'yup';
-
 import { SectionTitle } from '../SectionTitle';
-import { InputComponent } from './InputComponent';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
 import { MailIcon } from '../Icons/Mail';
-
-export interface FormDataProps {
-	name: string;
-	email: string;
-	subject: string;
-	message: string;
-}
-
-const schema = yup.object({
-	name: yup
-		.string()
-		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
-	email: yup
-		.string()
-		.email('Email precisa ser válido')
-		.trim()
-		.required('Campo obrigatório'),
-	subject: yup
-		.string()
-		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
-	message: yup
-		.string()
-		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
-});
+import { ContactForm } from './ContactForm';
 
 export const Contact = () => {
-	// const toast = useToast();
-
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors, isSubmitting },
-	} = useForm<FormDataProps>({
-		resolver: yupResolver(schema),
-	});
-
-	// call the function to send the email
-	const handleSendEmail = async (data: FormDataProps) => {
-		// await onSendEmail({ data, reset, toast });
-	};
-
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
-
 	return (
-		<div
-			id='contact'
-			ref={ref}
-			// style={{
-			// 	transform: isInView ? 'none' : 'translateX(-200px)',
-			// 	opacity: isInView ? 1 : 0,
-			// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-			// }}
-			className='max-w-[1600px] w-[85%] mx-auto mt-36'
-		>
+		<section id='contact' className='max-w-[1600px] w-[85%] mx-auto mt-36'>
 			<SectionTitle title='Quer me contratar?' subtitle='Contato' />
 
 			<div className='mt-14 flex items-start justify-between flex-col-reverse gap-10 lg:items-center lg:gap-0 md:flex-row'>
-				<form
-					onSubmit={handleSubmit(handleSendEmail)}
-					className='w-full md:w-[90%] lg:w-1/2'
-					autoComplete='off'
-				>
-					<InputComponent
-						placeholder='Nome'
-						{...register('name')}
-						error={errors?.name}
-					/>
-					<InputComponent
-						placeholder='Email'
-						{...register('email')}
-						error={errors?.email}
-					/>
-					<InputComponent
-						placeholder='Assunto'
-						{...register('subject')}
-						error={errors?.subject}
-					/>
-
-					<div>
-						<textarea
-							placeholder='Mensagem'
-							{...register('message')}
-							className='mt-4 w-full rounded-md px-4 py-2 max-w-[600px] h-48 bg-transparent border-[1px] border-[#656D72] resize-none text-light-text font-normal outline-none focus:border-light-primary focus:border-2 hover:border-light-primary dark:focus:border-dark-primary dark:hover:border-dark-primary dark:text-dark-text'
-						/>
-						<span className='text-red-500 block'>
-							{errors?.message?.message}
-						</span>
-					</div>
-
-					<button
-						type='submit'
-						className='w-full max-w-[600px] h-12 mt-6 bg-light-primary rounded-md hover:brightness-75 dark:bg-dark-primary'
-					>
-						<p className='text-[#F5F3FE] text-sm font-medium'>Enviar</p>
-					</button>
-				</form>
+				<ContactForm />
 
 				<div className='w-full md:w-[70%] lg:w-[40%]'>
 					<p className='text-light-text dark:text-dark-text'>
@@ -123,7 +18,6 @@ export const Contact = () => {
 						formulário. Se preferir, também pode entrar em contato através do
 						email
 					</p>
-
 					<div className='mt-4 flex gap-4'>
 						<div>
 							<MailIcon />
@@ -132,8 +26,9 @@ export const Contact = () => {
 							jaylsono17@gmail.com
 						</p>
 					</div>
+					C
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

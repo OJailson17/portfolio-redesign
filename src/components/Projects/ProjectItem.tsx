@@ -1,9 +1,6 @@
-'use client';
-
 import Image from 'next/image';
 
 import Link from 'next/link';
-import { useRef } from 'react';
 
 export interface Project {
 	name: string;
@@ -17,21 +14,10 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
-	const ref = useRef(null);
-
 	return (
-		<div
-			ref={ref}
-			// style={{
-			// 	transform: isInView ? 'none' : 'translateX(-200px)',
-			// 	opacity: isInView ? 1 : 0,
-			// 	transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-			// }}
-			className='max-w-[360px] rounded-lg bg-light-project-background dark:bg-dark-project-background'
-		>
+		<div className='max-w-[360px] rounded-lg bg-light-project-background dark:bg-dark-project-background'>
 			<div className='w-full h-[250px] rounded-lg relative'>
 				<Image
-					// as={Image}
 					src={project.imageUrl}
 					alt=''
 					fill
