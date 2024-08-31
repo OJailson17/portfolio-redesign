@@ -1,5 +1,6 @@
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { GoogleTagManager } from '@next/third-parties/google';
 import '../styles/global.css';
 import { ThemeContextProvider } from '../context/themeContext';
 
@@ -20,12 +21,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-	title: 'Home | Reading Dashboard',
+	title: 'Jailson de Oliveira | Portfólio',
 };
 
 export default function RootLayout({
-	// Layouts must accept a children prop.
-	// This will be populated with nested layouts or pages
 	children,
 }: {
 	children: React.ReactNode;
@@ -37,6 +36,9 @@ export default function RootLayout({
 			<body className='bg-light-background dark:bg-dark-background  overflow-x-hidden'>
 				<ThemeContextProvider>
 					<SpeedInsights />
+					<GoogleTagManager
+						gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+					/>
 					{children}
 				</ThemeContextProvider>
 			</body>

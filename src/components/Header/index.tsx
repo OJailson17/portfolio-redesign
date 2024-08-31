@@ -34,7 +34,7 @@ export const Header = () => {
 
 	return (
 		<header className='py-5 max-w-[1600px] mx-auto'>
-			<nav className='flex dark:bg-dark-background  justify-between items-center w-[85%] md:w-[90%] 2xl:w-full mx-auto '>
+			<nav className='flex dark:bg-dark-background  justify-between items-center w-[85%] md:w-[90%] min-[2000px]:w-full mx-auto '>
 				<div>
 					<Link href={'/'}>
 						<LogoIcon theme={!theme ? 'dark' : theme} />
@@ -43,7 +43,7 @@ export const Header = () => {
 
 				<div
 					ref={navLinksRef}
-					className='duration-500 md:static dark:bg-dark-background  absolute md:min-h-fit h-full right-0 top-[-100%] max-md:w-1/2 flex justify-center px-5 '
+					className='duration-500 md:static max-md:dark:bg-dark-background  absolute md:min-h-fit h-full right-0 top-[-100%] max-md:w-1/2 flex justify-center px-5 '
 				>
 					<ul className='flex md:flex-row flex-col max-md:mt-14 md:items-center md:gap-[4vw] gap-8'>
 						{navLink.map(link => (

@@ -7,7 +7,7 @@ export default function Head() {
 			<meta name='author' content='Jailson de Oliveira' />
 			<meta
 				name='keywords'
-				content='Desenvolvedor Web, Desenvolvedor frontend, Frontend, Javascript, React, NextJs, Typescript, Programador, Utinga, Bahia'
+				content='Desenvolvedor Web, Desenvolvedor frontend, Backend, Frontend, Javascript, React, NextJs, Typescript, Node, NestJs, Programador, Utinga, Bahia'
 			/>
 
 			<meta name='title' content='Jailson de Oliveira | Portfólio' />
