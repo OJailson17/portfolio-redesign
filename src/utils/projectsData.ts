@@ -17,18 +17,6 @@ export const projects: Project[] = [
 		demo: 'https://bibliasagrada.vercel.app/',
 		techs: ['Material UI', 'ReactJS', 'Styled Components'],
 	},
-<<<<<<< HEAD
-	{
-		name: 'Reading Dashboard',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/reading-dashboard-v2.png?updatedAt=1713845245385',
-		code: 'https://github.com/OJailson17/reading-dashboard',
-		demo: 'https://readingdashboard.vercel.app',
-		techs: ['NextJs', 'Typescript', 'TailwindCSS', 'Notion API'],
-	},
-=======
-
->>>>>>> update-next
 	{
 		name: 'Coffee Delivery',
 		imageUrl:
