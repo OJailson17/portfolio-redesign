@@ -25,8 +25,6 @@ export const viewport: Viewport = {
 	themeColor: '#ffffff',
 	width: 'device-width',
 	initialScale: 1,
-	maximumScale: 1,
-	userScalable: false,
 };
 
 export const metadata: Metadata = {
@@ -105,9 +103,6 @@ export default function RootLayout({
 					<SpeedInsights />
 					<GoogleAnalytics
 						gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-					/>
-					<GoogleTagManager
-						gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
 					/>
 					{children}
 				</ThemeContextProvider>
