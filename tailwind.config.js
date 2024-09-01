@@ -8,7 +8,7 @@ module.exports = {
 				'light-background': '#fff',
 				'light-primary': '#7E74F1',
 				'light-text': '#232E35',
-				'light-label': '#a2a4a5',
+				'light-label': '#717070',
 				'light-project-background': '#f1f1f1',
 				'light-button-background': '#d4d9db',
 				'dark-background': '#1E1E1E',

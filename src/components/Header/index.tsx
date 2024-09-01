@@ -49,7 +49,7 @@ export const Header = () => {
 						{navLink.map(link => (
 							<li key={link.label}>
 								<Link
-									className='dark:text-dark-text hover:underline'
+									className='text-light-text dark:text-dark-text hover:underline font-medium'
 									href={link.href}
 								>
 									{link.label}
