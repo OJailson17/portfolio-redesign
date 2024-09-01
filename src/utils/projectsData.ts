@@ -7,7 +7,7 @@ export const projects: Project[] = [
 			'https://ik.imagekit.io/jayllson/reading-dashboard-v2_p8VhIo6Z6.avif?updatedAt=1725149024784',
 		code: 'https://github.com/OJailson17/reading-dashboard',
 		demo: 'https://readingdashboard.vercel.app',
-		techs: ['NextJs', 'Typescript', 'Styled Components', 'Notion API'],
+		techs: ['NextJs', 'Styled Components', 'Notion API'],
 	},
 	{
 		name: 'Bíblia Sagrada Website',
@@ -32,7 +32,7 @@ export const projects: Project[] = [
 			'https://ik.imagekit.io/jayllson/food-delivery-home_kCR-KPZW4.avif?updatedAt=1725149024572',
 		code: 'https://github.com/OJailson17/food_delivery',
 		demo: 'https://food-delivery-jso.vercel.app/',
-		techs: ['NextJS', 'Typescript', 'Stripe', 'Redux', 'Styled Components'],
+		techs: ['NextJS', 'Stripe', 'Redux', 'Styled Components'],
 	},
 	{
 		name: 'Pricing Table',

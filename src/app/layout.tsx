@@ -31,6 +31,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html
+			lang='pt-BR'
 			className={`${inter.variable} ${jakarta.variable} dark scroll-smooth`}
 		>
 			<body className='bg-light-background dark:bg-dark-background  overflow-x-hidden'>

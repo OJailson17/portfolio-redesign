@@ -36,7 +36,7 @@ export const Header = () => {
 		<header className='py-5 max-w-[1600px] mx-auto'>
 			<nav className='flex dark:bg-dark-background  justify-between items-center w-[85%] md:w-[90%] min-[2000px]:w-full mx-auto '>
 				<div>
-					<Link href={'/'}>
+					<Link href={'/'} aria-label='Navegar para o início'>
 						<LogoIcon theme={!theme ? 'dark' : theme} />
 					</Link>
 				</div>
@@ -60,7 +60,12 @@ export const Header = () => {
 				</div>
 
 				<div className='flex items-center gap-6'>
-					<button onClick={changeTheme} className='px-2 py-2 rounded-full'>
+					<button
+						onClick={changeTheme}
+						name='theme'
+						aria-label='change-theme'
+						className='px-2 py-2 rounded-full'
+					>
 						{!theme || theme === 'dark' ? <SunIcon /> : <MoonIcon />}
 					</button>
 					<a href='#' className='dark:text-dark-text hover:underline px-1'>
@@ -69,6 +74,8 @@ export const Header = () => {
 					<button
 						onClick={onToggleMenu}
 						className='text-3xl cursor-pointer md:hidden'
+						name='menu'
+						aria-label='menu'
 					>
 						{menuIcons[menuIcon]}
 					</button>

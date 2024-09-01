@@ -26,7 +26,6 @@ export const Contact = () => {
 							jaylsono17@gmail.com
 						</p>
 					</div>
-					C
 				</div>
 			</div>
 		</section>
