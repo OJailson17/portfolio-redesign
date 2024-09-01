@@ -1,13 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
-	content: [
-		// "./app/**/*.{js,ts,jsx,tsx,mdx}",
-		// "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		// "./components/**/*.{js,ts,jsx,tsx,mdx}",
-		// Or if using `src` directory:
-		'./src/**/*.{js,ts,jsx,tsx,mdx}',
-	],
+	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
 	theme: {
 		extend: {
 			colors: {
@@ -18,7 +12,7 @@ module.exports = {
 				'light-project-background': '#f1f1f1',
 				'light-button-background': '#d4d9db',
 				'dark-background': '#1E1E1E',
-				'dark-primary': '#7E74F1',
+				'dark-primary': '#7e74f1da',
 				'dark-text': '#fff',
 				'dark-label': '#929292',
 				'dark-project-background': '#181A1B',
