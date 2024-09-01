@@ -1,6 +1,6 @@
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import '../styles/global.css';
 import { ThemeContextProvider } from '../context/themeContext';
 import { Metadata, Viewport } from 'next';
@@ -103,6 +103,9 @@ export default function RootLayout({
 			<body className='bg-light-background dark:bg-dark-background  overflow-x-hidden'>
 				<ThemeContextProvider>
 					<SpeedInsights />
+					<GoogleAnalytics
+						gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+					/>
 					<GoogleTagManager
 						gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
 					/>
