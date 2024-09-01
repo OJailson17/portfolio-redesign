@@ -21,7 +21,7 @@ export const frontendTechnologies = [
 	},
 	{
 		nome: 'NextJS',
-		nível: '70%',
+		nível: '75%',
 	},
 	{
 		nome: 'React Native (expo)',

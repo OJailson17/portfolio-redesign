@@ -1,23 +1,17 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { google } from 'googleapis';
+'use server';
 
+import { google } from 'googleapis';
 import nodemailer, { TransportOptions } from 'nodemailer';
-import Cors from 'cors';
+import { sanitize } from 'isomorphic-dompurify';
 
 import { emailSchemaHTML, emailSchemaText } from '../../utils/emailSchema';
-import initMiddleware from '../../lib/init-middleware';
 
-// Initialize the cors middleware
-const cors = initMiddleware(
-	Cors({
-		// Only allow requests with POST and OPTIONS
-		methods: ['POST', 'OPTIONS'],
-		origin: [
-			'https://jailsondeoliveira.vercel.app',
-			/\.jailsondeoliveira\.vercel\.app$/,
-		],
-	}),
-);
+type SendEmailProps = {
+	name: string;
+	email: string;
+	subject: string;
+	message: string;
+};
 
 const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URL, REFRESH_TOKEN } = process.env;
 
@@ -28,11 +22,12 @@ const oAuth2Client = new google.auth.OAuth2(
 	REDIRECT_URL,
 );
 
-// Function to send the email
-const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
-	// Run cors
-	await cors(req, res);
-
+export const onSendEmail = async ({
+	name,
+	email,
+	message,
+	subject,
+}: SendEmailProps) => {
 	try {
 		// Set the credentials
 		oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
@@ -53,29 +48,31 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 			},
 		} as TransportOptions);
 
-		// Body data
-		const { name, email, subject, message } = req.body;
-
 		const userEmailDest = process.env.NODEMAILER_USER_EMAIL_DEST;
 
 		const mailOptions = {
 			from: `${name} <${email}>`,
 			to: `${userEmailDest}`,
 			subject: subject,
-			text: emailSchemaText(name, email, message),
-			html: emailSchemaHTML(name, email, message),
+			text: emailSchemaText(sanitize(name), sanitize(email), sanitize(message)),
+			html: emailSchemaHTML(sanitize(name), sanitize(email), sanitize(message)),
 		};
 
 		// Send the email passing the options
 		const result = await transport.sendMail(mailOptions).catch(error => {
-			res.json(error);
+			console.log(error);
+			return { error };
 		});
 
-		res.json({ response: 'Mensagem enviada com sucesso', status: 200, result });
+		return {
+			response: {
+				message: 'Mensagem enviada com sucesso',
+				status: 200,
+				result,
+			},
+		};
 	} catch (error) {
-		res.json({ error });
 		console.log(error);
+		return { error: error };
 	}
 };
-
-export default sendEmail;

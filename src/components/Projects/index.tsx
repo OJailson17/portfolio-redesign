@@ -1,23 +1,17 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
-
 import { projects } from '../../utils/projectsData';
 import { SectionTitle } from '../SectionTitle';
 import { ProjectItem } from './ProjectItem';
 
 export const Projects = () => {
 	return (
-		<Box as='section' id='projetos' maxW={1600} w={['85%']} margin={'0 auto'} mt={36}>
+		<section id='projects' className=' w-[85%] max-w-[1600px] mx-auto mt-36'>
 			<SectionTitle title='Meus Projetos' subtitle='Experiência' />
 
-			<SimpleGrid
-				columns={[1, 1, 2, 3, 3]}
-				spacing={[10, 10, 10, 10, 14]}
-				mt={36}
-			>
+			<div className='grid grid-cols-1 gap-10 mt-14 md:grid-cols-2 lg:grid-cols-3  2xl:gap-14'>
 				{projects.map(project => (
 					<ProjectItem key={project.name} project={project} />
 				))}
-			</SimpleGrid>
-		</Box>
+			</div>
+		</section>
 	);
 };

@@ -1,5 +1,3 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
-
 interface SectionTitleProps {
 	title: string;
 	subtitle: string;
@@ -8,29 +6,16 @@ interface SectionTitleProps {
 export const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
 	return (
 		<>
-			<Flex align={'center'} gap={4}>
-				<Box width={4} height={0.5} background='#D9D9D9' />
-				<Text
-					fontWeight={'medium'}
-					fontSize={12}
-					letterSpacing={'7.5px'}
-					lineHeight={6}
-					color={'label'}
-					textTransform={'uppercase'}
-				>
+			<div className='flex items-center gap-4'>
+				<div className='w-4 h-[2px] bg-[#E2E8F0]' />
+				<p className='font-medium text-xs tracking-[7.5px] leading-6 text-light-label uppercase dark:text-dark-label'>
 					{subtitle}
-				</Text>
-			</Flex>
+				</p>
+			</div>
 
-			<Text
-				fontWeight={'bold'}
-				fontSize={36}
-				fontFamily={"'Plus Jakarta Sans', sans-serif"}
-				mt={2}
-				color={'text'}
-			>
+			<p className='font-bold text-4xl mt-2 font-jakarta text-light-text max-sm:leading-[3rem] dark:text-dark-text'>
 				{title}
-			</Text>
+			</p>
 		</>
 	);
 };

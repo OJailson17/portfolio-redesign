@@ -1,3 +1,5 @@
+'use client';
+
 import {
 	createContext,
 	ReactNode,
@@ -10,7 +12,7 @@ interface ThemeContextProviderProps {
 	children: ReactNode;
 }
 
-type Theme = 'light' | 'dark' | null;
+export type Theme = 'light' | 'dark' | null;
 
 interface ThemeContextProps {
 	theme: Theme;
@@ -43,6 +45,18 @@ export const ThemeContextProvider = ({
 
 	// set the theme state value to local storage
 	useEffect(() => {
+		// if (window) {
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark');
+			// document.documentElement.classList.add('light');
+		} else {
+			if (document.documentElement.classList.contains('dark')) {
+				document.documentElement.classList.remove('dark');
+			}
+
+			document.documentElement.classList.add('dark');
+		}
+		// }
 		localStorage.setItem('@portfolio:theme', theme || '');
 	}, [theme]);
 

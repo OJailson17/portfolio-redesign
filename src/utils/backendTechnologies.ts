@@ -1,10 +1,14 @@
 export const backendTechnologies = [
 	{
 		nome: 'Node',
-		nível: '60%',
+		nível: '75%',
 	},
 	{
 		nome: 'Express',
+		nível: '70%',
+	},
+	{
+		nome: 'NestJS',
 		nível: '60%',
 	},
 	{
