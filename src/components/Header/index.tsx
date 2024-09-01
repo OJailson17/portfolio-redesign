@@ -72,6 +72,7 @@ export const Header = () => {
 					<a
 						href='/assets/documents/jailson-de-oliveira-cv.pdf'
 						download
+						rel='nofollow'
 						className='dark:text-dark-text hover:underline px-1'
 						title='Baixar currículo'
 					>

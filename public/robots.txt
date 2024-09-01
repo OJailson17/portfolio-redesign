@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /public/documents/jailson-de-oliveira-cv.pdf
