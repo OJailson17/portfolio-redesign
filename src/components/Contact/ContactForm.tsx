@@ -89,7 +89,7 @@ export const ContactForm = () => {
 				type='submit'
 				className='w-full max-w-[600px] h-12 mt-6 bg-light-primary rounded-md hover:brightness-75 dark:bg-dark-primary'
 			>
-				<p className='text-[#F5F3FE] text-sm font-medium'>Enviar</p>
+				<p className='text-white text-md font-large'>Enviar</p>
 			</button>
 		</form>
 	);
