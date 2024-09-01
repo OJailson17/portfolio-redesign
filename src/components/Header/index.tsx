@@ -65,10 +65,16 @@ export const Header = () => {
 						name='theme'
 						aria-label='change-theme'
 						className='px-2 py-2 rounded-full'
+						title='Mudar tema'
 					>
 						{!theme || theme === 'dark' ? <SunIcon /> : <MoonIcon />}
 					</button>
-					<a href='#' className='dark:text-dark-text hover:underline px-1'>
+					<a
+						href='/assets/documents/jailson-de-oliveira-cv.pdf'
+						download
+						className='dark:text-dark-text hover:underline px-1'
+						title='Baixar currículo'
+					>
 						CV
 					</a>
 					<button
