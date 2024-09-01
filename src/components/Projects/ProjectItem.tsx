@@ -26,9 +26,10 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 						borderRadius: '8px',
 					}}
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					priority={
-						project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
-					}
+					// priority={
+					// 	project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
+					// }
+					loading='lazy'
 				/>
 			</div>
 
