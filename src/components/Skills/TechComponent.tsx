@@ -1,4 +1,5 @@
-import { Box, Text } from '@chakra-ui/react';
+import classNames from 'classnames';
+import clsx from 'clsx';
 
 interface TechComponentProps {
 	tech: string;
@@ -6,26 +7,25 @@ interface TechComponentProps {
 }
 
 export const TechComponent = ({ tech, level }: TechComponentProps) => {
-	return (
-		<Box width={['100%']}>
-			<Text fontWeight={'medium'} fontSize={14} color={'text'}>
-				{tech}
-			</Text>
+	const dynamicClass = classNames(
+		`w-[50%]`,
+		'h-2',
+		'bg-[#7E74F1]',
+		'rounded-full',
+	);
 
-			<Box
-				maxW={'300px'}
-				height={2}
-				mt={3}
-				background='#cfd7db'
-				borderRadius={'full'}
-			>
-				<Box
-					width={level}
-					height={2}
-					background='#7E74F1'
-					borderRadius={'full'}
+	return (
+		<div className='w-full'>
+			<p className='font-medium text-sm text-light-text font dark:text-dark-text'>
+				{tech}
+			</p>
+
+			<div className='max-w-[300px] h-2 mt-3 bg-[#cfd7db] rounded-full'>
+				<div
+					className={'h-2 bg-[#7E74F1] rounded-full'}
+					style={{ width: `${level}` }}
 				/>
-			</Box>
-		</Box>
+			</div>
+		</div>
 	);
 };

@@ -1,4 +1,5 @@
-import { FormControl, FormErrorMessage, Input } from '@chakra-ui/react';
+// 'use client';
+
 import { forwardRef, ForwardRefRenderFunction } from 'react';
 import { FieldError } from 'react-hook-form';
 
@@ -12,23 +13,15 @@ const InputBase: ForwardRefRenderFunction<
 	InputComponentProps
 > = ({ placeholder, error, ...rest }, ref) => {
 	return (
-		<FormControl isInvalid={!!error}>
-			<Input
+		<div>
+			<input
 				placeholder={placeholder}
-				mt={4}
-				maxW={'600px'}
-				height={'48px'}
-				color={'text'}
-				borderColor={'#656D72'}
-				focusBorderColor={'#7E74F1'}
-				_hover={{
-					borderColor: '#7E74F1',
-				}}
 				ref={ref}
 				{...rest}
+				className='mt-4 w-full rounded-md px-4 py-2  max-w-[600px] h-12 bg-transparent border-[1px] border-[#656D72] resize-none text-light-text font-normal outline-none focus:border-light-primary focus:border-2 hover:border-light-primary dark:focus:border-dark-primary dark:hover:border-dark-primary dark:text-dark-text'
 			/>
-			<FormErrorMessage>{error?.message}</FormErrorMessage>
-		</FormControl>
+			<span className='text-red-500 block mt-2'>{error?.message}</span>
+		</div>
 	);
 };
 

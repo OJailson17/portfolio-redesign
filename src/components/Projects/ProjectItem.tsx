@@ -1,16 +1,6 @@
-import {
-	Box,
-	Button,
-	Flex,
-	HStack,
-	Image as ChakraImage,
-	Text,
-} from '@chakra-ui/react';
-import { useInView } from 'framer-motion';
 import Image from 'next/image';
 
 import Link from 'next/link';
-import { useRef } from 'react';
 
 export interface Project {
 	name: string;
@@ -24,24 +14,10 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
-
 	return (
-		<Box
-			maxW={'360px'}
-			borderRadius={'lg'}
-			background={'projectBackground'}
-			ref={ref}
-			style={{
-				transform: isInView ? 'none' : 'translateX(-200px)',
-				opacity: isInView ? 1 : 0,
-				transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-			}}
-		>
-			<Box w='100%' h='250px' borderRadius={'lg'} position='relative'>
+		<div className='max-w-[360px] rounded-lg bg-light-project-background dark:bg-dark-project-background'>
+			<div className='w-full h-[250px] rounded-lg relative'>
 				<Image
-					// as={Image}
 					src={project.imageUrl}
 					alt=''
 					fill
@@ -50,68 +26,52 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 						borderRadius: '8px',
 					}}
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					priority={
-						project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
-					}
+					// priority={
+					// 	project.imageUrl.indexOf('food-delivery') !== -1 ? true : false
+					// }
+					loading='lazy'
 				/>
-			</Box>
+			</div>
 
-			<Box paddingInline={4}>
-				<Text
-					mt={4}
-					fontFamily={"'Plus Jakarta Sans', sans-serif"}
-					fontWeight={'medium'}
-					color={'text'}
-				>
+			<div className='px-4'>
+				<p className='mt-4 font-medium text-light-text font-jakarta dark:text-dark-text'>
 					{project.name}
-				</Text>
+				</p>
 
-				<HStack
-					spacing={4}
-					mt={4}
-					wrap={'wrap'}
-					wordBreak={'break-word'}
-					whiteSpace='initial'
-				>
+				<div className='flex gap-4 mt-4 flex-wrap break-words whitespace-normal'>
 					{project.techs.map(tech => (
-						<Text
-							fontSize={14}
-							color={'label'}
-							fontWeight={'medium'}
+						<p
 							key={tech}
+							className='text-sm text-light-label font-medium dark:text-dark-label'
 						>
 							{tech}
-						</Text>
+						</p>
 					))}
-				</HStack>
+				</div>
 
-				<Flex mt={4} mb={4} align={'center'} gap={4}>
+				<div className='mt-4 mb-4 flex items-center gap-4'>
 					<Link href={project.demo || project.code} target='_blank'>
-						<Button
-							background={'buttonBackground'}
-							_hover={{
-								filter: 'brightness(90%)',
-							}}
+						<button
+							className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
+							tabIndex={-1}
 						>
-							<Text fontSize={14} fontWeight={'medium'}>
+							<p className='text-sm text-light-text font-medium dark:text-dark-text'>
 								Demo
-							</Text>
-						</Button>
+							</p>
+						</button>
 					</Link>
 					<Link href={project.code} target='_blank'>
-						<Button
-							background={'buttonBackground'}
-							_hover={{
-								filter: 'brightness(90%)',
-							}}
+						<button
+							className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
+							tabIndex={-1}
 						>
-							<Text fontSize={14} fontWeight={'medium'}>
+							<p className='text-sm font-medium text-light-text dark:text-dark-text'>
 								Código
-							</Text>
-						</Button>
+							</p>
+						</button>
 					</Link>
-				</Flex>
-			</Box>
-		</Box>
+				</div>
+			</div>
+		</div>
 	);
 };

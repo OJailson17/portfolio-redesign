@@ -1,125 +1,39 @@
-import {
-	Box,
-	Flex,
-	HStack,
-	keyframes,
-	Text,
-	useBreakpointValue,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-
-import { useTheme } from '../../context/themeContext';
-
 import { HeroImg } from './HeroImg';
+import { HeroLinks } from './HeroLinks';
 
 export const Hero = () => {
-	const { theme } = useTheme();
-
-	const isWideVersion = useBreakpointValue({
-		base: false,
-		lg: true,
-	});
-
-	const animationKeyFrame = keyframes`
-	from {
-	opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-`;
-
-	const animation = `${animationKeyFrame} linear 0.5s forwards`;
-
 	return (
-		<Flex
-			as={motion.section}
-			animation={animation}
-			maxW={1600}
-			w={['85%' ,'85%', '90%', '90%', '85%']}
-			margin={'0 auto'}
-			mt={'36'}
-			align={!isWideVersion ? 'flex-start' : 'center'}
-			justify={'space-between'}
+		<section
+			id='hero'
+			className='max-w-[1600px] w-[85%] mx-auto mt-36 flex items-start justify-between md:w-[90%] lg:items-center 2xl:w-[85%]'
 		>
-			<Box width={['100%', '100%', '100%', '100%', '100%']}>
-				<Flex align={'center'} gap={4} direction={'row'}>
-					<Box width={4} height={0.5} background='#D9D9D9' />
-					<Text
-						fontWeight={'medium'}
-						fontSize={12}
-						letterSpacing={'7.5px'}
-						lineHeight={6}
-						color={'label'}
-					>
+			<div className='w-full'>
+				<div className='flex items-center gap-4 flex-row'>
+					<div className='w-4 h-[2px] bg-[#E2E8F0]' />
+					<p className='font-medium text-xs tracking-[7.5px] leading-6 text-light-label dark:text-dark-label'>
 						MEU NOME É
-					</Text>
-				</Flex>
+					</p>
+				</div>
 
-				<Text
-					fontWeight={'bold'}
-					fontSize={'44px'}
-					fontFamily={"'Plus Jakarta Sans', sans-serif"}
-					mt={4}
-					color={'text'}
-				>
+				<p className='font-bold text-[44px] mt-4 text-light-text font-jakarta dark:text-dark-text'>
 					Jailson de{' '}
-					<Text as='span' color={'primary'}>
+					<span className='text-light-primary dark:text-dark-primary'>
 						Oliveira.
-					</Text>
-				</Text>
+					</span>
+				</p>
 
-				<Text mt={8} lineHeight={8} color={'text'}>
+				<p className='mt-8 leading-8 text-light-text dark:text-dark-text'>
 					Sou desenvolvedor web. Gosto de construir tudo, desde sites simples
 					até sites mais complexos. Tenho foco em Front-end e possuo maior
 					proficiência e experiência no ecossistema Javascript
-				</Text>
+				</p>
 
-				<HStack spacing={8} mt={10}>
-					<Link href={'https://www.instagram.com/ojailson17/'} target='_blank'>
-						<Image
-							src={`/assets/instagram-${
-								!theme || theme === 'dark' ? 'light' : 'dark'
-							}.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
-					</Link>
-					<Link href={'https://github.com/OJailson17'} target='_blank'>
-						<Image
-							src={`/assets/github-${
-								!theme || theme === 'dark' ? 'light' : 'dark'
-							}.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
-					</Link>
+				<HeroLinks />
+			</div>
 
-					<Link
-						href={'https://www.linkedin.com/in/ojailson17/'}
-						target='_blank'
-					>
-						<Image
-							src={`/assets/linkedin-${
-								!theme || theme === 'dark' ? 'light' : 'dark'
-							}.svg`}
-							alt='Github icon'
-							width={'24'}
-							height={'24'}
-						/>
-					</Link>
-				</HStack>
-			</Box>
-
-			<Flex display={['none', 'none', 'flex']} alignItems={'center'} justifyContent={'center'} width={['100%', '100%', '100%', '90%', '100%']}>
+			<div className='hidden items-center justify-center w-full md:flex lg:w-[90%] 2xl:w-full'>
 				<HeroImg />
-			</Flex>
-		</Flex>
+			</div>
+		</section>
 	);
 };

@@ -1,107 +1,92 @@
-import {
-	Box,
-	Button,
-	Flex,
-	keyframes,
-	Link as ChakraLink,
-	Text,
-	Tooltip,
-	useBreakpointValue,
-	useDisclosure,
-} from '@chakra-ui/react';
+'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-
-import { Navbar } from './Navbar';
-import { NavContent } from './NavContent';
+import { IoCloseOutline } from 'react-icons/io5';
+import { IoIosMenu } from 'react-icons/io';
+import { useRef, useState } from 'react';
 import { useTheme } from '../../context/themeContext';
-
-const animationKeyFrame = keyframes`
-from {
-opacity: 0;
-}
-to {
-	opacity: 1;
-}
-`;
-
-const animation = `${animationKeyFrame} linear 0.5s forwards`;
+import { SunIcon } from '../Icons/Sun';
+import { MoonIcon } from '../Icons/Moon';
+import { LogoIcon } from '../Icons/Logo';
+import { navLink } from '../../utils/constants/header';
 
 export const Header = () => {
-	const { theme, changeTheme } = useTheme();
+	const [menuIcon, setMenuIcon] = useState<'burger' | 'close'>('burger');
 
-	const disclosure = useDisclosure();
+	const { changeTheme, theme } = useTheme();
 
-	const isWideVersion = useBreakpointValue({
-		base: false,
-		lg: true,
-	});
+	const menuIcons = {
+		burger: (
+			<IoIosMenu color={!theme || theme === 'dark' ? 'white' : 'black'} />
+		),
+		close: (
+			<IoCloseOutline color={!theme || theme === 'dark' ? 'white' : 'black'} />
+		),
+	};
+
+	const navLinksRef = useRef<HTMLDivElement | null>(null);
+
+	const onToggleMenu = () => {
+		menuIcon === 'burger' ? setMenuIcon('close') : setMenuIcon('burger');
+
+		navLinksRef.current?.classList.toggle('top-[64px]');
+	};
 
 	return (
-		<Flex
-			as={'header'}
-			animation={animation}
-			maxW={1600}
-			w={['85%']}
-			margin={'0 auto'}
-			paddingTop={10}
-			align={'center'}
-			justify={'space-between'}
-		>
-			<Link href={'/'}>
-				<Image
-					src={`/assets/logo-${theme === 'light' ? 'dark' : 'light'}.svg`}
-					alt=''
-					width='138'
-					height='54'
-				/>
-			</Link>
+		<header className='py-5 max-w-[1600px] mx-auto'>
+			<nav className='flex dark:bg-dark-background  justify-between items-center w-[85%] md:w-[90%] min-[2000px]:w-full mx-auto '>
+				<div>
+					<Link href={'/'} aria-label='Navegar para o início'>
+						<LogoIcon theme={!theme ? 'dark' : theme} />
+					</Link>
+				</div>
 
-			{isWideVersion ? <NavContent /> : <Navbar disclosure={disclosure} />}
+				<div
+					ref={navLinksRef}
+					className='duration-500 md:static max-md:dark:bg-dark-background  absolute md:min-h-fit h-full right-0 top-[-100%] max-md:w-1/2 flex justify-center px-5 '
+				>
+					<ul className='flex md:flex-row flex-col max-md:mt-14 md:items-center md:gap-[4vw] gap-8'>
+						{navLink.map(link => (
+							<li key={link.label}>
+								<Link
+									className='text-light-text dark:text-dark-text hover:underline font-medium'
+									href={link.href}
+								>
+									{link.label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
 
-			<Flex gap={[5, 8, 8]} direction={['row']} align={'center'}>
-				<Tooltip label='Mudar tema' aria-label='A tooltip'>
-					<Button
-						w={'24px'}
-						h={'24px'}
-						colorScheme='transparent'
-						onClick={() => changeTheme()}
+				<div className='flex items-center gap-6'>
+					<button
+						onClick={changeTheme}
+						name='theme'
+						aria-label='change-theme'
+						className='px-2 py-2 rounded-full'
+						title='Mudar tema'
 					>
-						<Image
-							src={`/assets/${theme === 'light' ? 'moon' : 'sun'}.svg`}
-							alt='moon icon'
-							fill
-							style={{
-								objectFit: 'contain',
-							}}
-						/>
-					</Button>
-				</Tooltip>
-
-				<Tooltip label='Baixar Currículo' aria-label='A tooltip'>
-					<ChakraLink
+						{!theme || theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+					</button>
+					<a
 						href='/assets/documents/jailson-de-oliveira-cv.pdf'
 						download
-						color='text'
+						className='dark:text-dark-text hover:underline px-1'
+						title='Baixar currículo'
 					>
-						<Text fontWeight={'medium'} fontSize={14}>
-							{!isWideVersion ? 'CV' : 'Download CV'}
-						</Text>
-					</ChakraLink>
-				</Tooltip>
-
-				{!isWideVersion && (
-					<Box onClick={disclosure.onOpen}>
-						<Image
-							src={`/assets/menu-${theme === 'light' ? 'dark' : 'light'}.svg`}
-							alt=''
-							width={30}
-							height={30}
-						/>
-					</Box>
-				)}
-			</Flex>
-		</Flex>
+						CV
+					</a>
+					<button
+						onClick={onToggleMenu}
+						className='text-3xl cursor-pointer md:hidden'
+						name='menu'
+						aria-label='menu'
+					>
+						{menuIcons[menuIcon]}
+					</button>
+				</div>
+			</nav>
+		</header>
 	);
 };
