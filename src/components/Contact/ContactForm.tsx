@@ -85,7 +85,7 @@ export const ContactForm = () => {
 			<ToastContainer />
 			<form
 				onSubmit={handleSubmit(handleSendEmail)}
-				className='w-full md:w-[90%] lg:w-1/2'
+				className='w-full md:w-full'
 				autoComplete='off'
 			>
 				<InputComponent

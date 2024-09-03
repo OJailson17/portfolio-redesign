@@ -16,10 +16,6 @@ export const backendTechnologies = [
 		nível: '70%',
 	},
 	{
-		nome: 'REST',
-		nível: '80%',
-	},
-	{
 		nome: 'TypeORM',
 		nível: '70%',
 	},
