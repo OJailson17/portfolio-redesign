@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { InstagramIcon } from '../Icons/Instagram';
 import { GithubIcon } from '../Icons/Github';
+import { LinkedInIcon } from '../Icons/LinkedIn';
 
 export const Footer = () => {
 	return (
@@ -25,7 +26,7 @@ export const Footer = () => {
 					target='_blank'
 					aria-label='LinkedIn'
 				>
-					<InstagramIcon theme={null} />
+					<LinkedInIcon theme={null} />
 				</Link>
 			</div>
 
