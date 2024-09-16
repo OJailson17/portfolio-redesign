@@ -115,7 +115,7 @@ export const ContactForm = () => {
 
 				<button
 					type='submit'
-					className='w-full max-w-[600px] h-12 mt-6 bg-dark-primary rounded-md hover:brightness-75'
+					className='w-full max-w-[600px] h-12 mt-6 bg-dark-primary rounded-md hover:brightness-75 outline-none focus:border-light-text focus:border-2 dark:focus:border-dark-text'
 					disabled={isSubmitting}
 				>
 					{isSubmitting ? (
