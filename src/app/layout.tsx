@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 		site: 'https://jailsondeoliveira.vercel.app',
 	},
 	verification: {
-		google: 'google',
+		google: 'mNHo0kVRWw-LyGwyJpcuIaIV3iEzKPtwrLB0IqxglCA',
 	},
 };
 
