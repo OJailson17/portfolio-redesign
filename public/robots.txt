@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /public/documents/jailson-de-oliveira-cv.pdf
+Disallow: /assets/documents/jailson-de-oliveira-cv.pdf
