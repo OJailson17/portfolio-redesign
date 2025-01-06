@@ -7,7 +7,15 @@ export const projects: Project[] = [
 			'https://ik.imagekit.io/jayllson/reading-dashboard-v2_p8VhIo6Z6.avif?updatedAt=1725149024784',
 		code: 'https://github.com/OJailson17/reading-dashboard',
 		demo: 'https://readingdashboard.vercel.app',
-		techs: ['NextJs', 'Styled Components', 'Notion API'],
+		techs: ['NextJS', 'Styled Components', 'Notion API'],
+	},
+	{
+		name: 'Calculadora de Conta de Água',
+		imageUrl:
+			'https://ik.imagekit.io/jayllson/calculadora-ca_Is5bD97_Id.png?updatedAt=1735959763586',
+		code: '',
+		demo: 'https://calculadoracontadeagua.vercel.app',
+		techs: ['NextJS', 'TailwindCSS', 'Typescript'],
 	},
 	{
 		name: 'Bíblia Sagrada Website',
@@ -23,7 +31,7 @@ export const projects: Project[] = [
 			'https://ik.imagekit.io/jayllson/coffee-delivery-home_JAmiEo1b8.avif?updatedAt=1725149502220',
 		code: 'https://github.com/OJailson17/coffee-delivery',
 		demo: 'https://coffee-delivery-jso.vercel.app/',
-		techs: ['ReactJs', 'Styled Components', 'Typescript'],
+		techs: ['ReactJS', 'Styled Components', 'Typescript'],
 	},
 	{
 		name: 'Food Delivery',

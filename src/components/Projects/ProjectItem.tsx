@@ -19,7 +19,7 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 			<div className='w-full h-[250px] rounded-lg relative'>
 				<Image
 					src={project.imageUrl}
-					alt=''
+					alt='Screenshot do projeto'
 					fill
 					style={{
 						objectFit: 'cover',
@@ -60,16 +60,19 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 							</p>
 						</button>
 					</Link>
-					<Link href={project.code} target='_blank'>
-						<button
-							className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
-							tabIndex={-1}
-						>
-							<p className='text-sm font-medium text-light-text dark:text-dark-text'>
-								Código
-							</p>
-						</button>
-					</Link>
+
+					{project.code.length > 0 && (
+						<Link href={project.code} target='_blank'>
+							<button
+								className='min-w-[40px] h-10 px-4 rounded-md bg-light-button-background hover:brightness-90 dark:bg-dark-button-background'
+								tabIndex={-1}
+							>
+								<p className='text-sm font-medium text-light-text dark:text-dark-text'>
+									Código
+								</p>
+							</button>
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>

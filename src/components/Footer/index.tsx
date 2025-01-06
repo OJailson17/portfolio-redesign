@@ -4,6 +4,8 @@ import { GithubIcon } from '../Icons/Github';
 import { LinkedInIcon } from '../Icons/LinkedIn';
 
 export const Footer = () => {
+	const currentYear = new Date().getFullYear();
+
 	return (
 		<footer className='w-[85%] mx-auto mt-36 flex items-center justify-center flex-col'>
 			<div className='flex gap-8'>
@@ -30,8 +32,11 @@ export const Footer = () => {
 				</Link>
 			</div>
 
-			<p className='mt-6 mb-20 text-light-label text-sm dark:text-dark-label'>
-				&copy; 2023 - Jailson de Oliveira
+			<p className='mt-6 text-light-label text-sm dark:text-dark-label'>
+				&copy; 2023 - {currentYear}
+			</p>
+			<p className='mb-20 mt-2 text-light-label text-sm dark:text-dark-label'>
+				Jailson de Oliveira
 			</p>
 		</footer>
 	);
