@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 	authors: [
 		{
 			name: 'Jailson de Oliveira',
-			url: 'https://jailsondeoliveira.vercel.com',
+			url: 'https://jailsondeoliveira.com.br',
 		},
 	],
 	keywords: [
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		siteName: 'Jailson de Oliveira | Portfólio',
 		type: 'website',
-		url: 'https://jailsondeoliveira.vercel.app',
+		url: 'https://jailsondeoliveira.com.br',
 		title: 'Jailson de Oliveira | Portfólio',
 		description:
 			'Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 		],
 		description:
 			'Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.',
-		site: 'https://jailsondeoliveira.vercel.app',
+		site: 'https://jailsondeoliveira.com.br',
 	},
 	verification: {
 		google: 'mNHo0kVRWw-LyGwyJpcuIaIV3iEzKPtwrLB0IqxglCA',
