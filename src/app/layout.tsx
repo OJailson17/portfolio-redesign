@@ -83,6 +83,13 @@ export const metadata: Metadata = {
 			'Portfólio pessoal contendo as principais habilidades e experiências de Jailson de Oliveira em desenvolvimento web, além também de exemplos de projetos pessoais.',
 		site: 'https://jailsondeoliveira.com.br',
 	},
+	alternates: {
+		canonical: 'https://jailsondeoliveira.com.br',
+	},
+
+	verification: {
+		google: 'mNHo0kVRWw-LyGwyJpcuIaIV3iEzKPtwrLB0IqxglCA',
+	},
 };
 
 export default function RootLayout({
