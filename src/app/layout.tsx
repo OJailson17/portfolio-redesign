@@ -87,9 +87,9 @@ export const metadata: Metadata = {
 		canonical: 'https://jailsondeoliveira.com.br',
 	},
 
-	// verification: {
-	// 	google: 'mNHo0kVRWw-LyGwyJpcuIaIV3iEzKPtwrLB0IqxglCA',
-	// },
+	verification: {
+		google: 'mNHo0kVRWw-LyGwyJpcuIaIV3iEzKPtwrLB0IqxglCA',
+	},
 };
 
 export default function RootLayout({
