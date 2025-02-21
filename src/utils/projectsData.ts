@@ -13,7 +13,7 @@ export const projects: Project[] = [
 		name: 'Calculadora de Conta de Água',
 		imageUrl:
 			'https://ik.imagekit.io/jayllson/calculadora-ca_Is5bD97_Id.png?updatedAt=1735959763586',
-		code: '',
+		code: 'https://github.com/OJailson17/calculadora-conta-de-agua/',
 		demo: 'https://calculadoracontadeagua.vercel.app',
 		techs: ['NextJS', 'TailwindCSS', 'Typescript'],
 	},
