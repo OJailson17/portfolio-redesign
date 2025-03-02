@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import * as yup from 'yup';
-import { onSendEmail } from '../../app/actions/sendEmail';
 import { ToastContainer, toast } from 'react-toastify';
 import { useTheme } from '../../context/themeContext';
 import { ImSpinner2 } from 'react-icons/im';
@@ -57,10 +56,15 @@ export const ContactForm = () => {
 
 	// call the function to send the email
 	const handleSendEmail = async (data: FormDataProps) => {
-		const emailResponse = await onSendEmail(data);
+		const sendEmail = await fetch('/api/email', {
+			method: 'POST',
+			body: JSON.stringify(data),
+		});
 
-		if (emailResponse.error) {
-			console.log(emailResponse.error);
+		const response = await sendEmail.json();
+
+		if (response.error) {
+			console.log(response.error);
 
 			return toast('Erro! sua mensagem não foi enviada. Tente novamente', {
 				position: 'top-center',
