@@ -23,9 +23,10 @@ export const Hero = () => {
 				</p>
 
 				<p className='mt-8 leading-8 text-light-text dark:text-dark-text'>
-					Sou desenvolvedor web. Gosto de construir tudo, desde sites simples
-					até sites mais complexos. Tenho foco em Front-end e possuo maior
-					proficiência e experiência no ecossistema Javascript
+					Sou desenvolvedor frontend. Gosto de construir tudo, desde sites
+					simples até interfaces mais complexas. Apesar de ter foco em frontend,
+					também possuo amplo conhecimento em backend. Tenho maior proficiência
+					e experiência no ecossistema Javascript.
 				</p>
 
 				<HeroLinks />
