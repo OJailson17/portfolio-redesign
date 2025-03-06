@@ -72,6 +72,7 @@ export const metadata: Metadata = {
 		],
 		locale: 'pt_BR',
 	},
+	metadataBase: new URL('https://jailsondeoliveira.com.br'),
 	twitter: {
 		card: 'summary_large_image',
 		creator: '@ojailson17',
