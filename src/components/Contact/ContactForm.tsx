@@ -22,24 +22,24 @@ export interface FormDataProps {
 const schema = yup.object({
 	name: yup
 		.string()
+		.required('Campo obrigatório')
 		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
+		.trim(),
 	email: yup
 		.string()
+		.required('Campo obrigatório')
 		.email('Email precisa ser válido')
-		.trim()
-		.required('Campo obrigatório'),
+		.trim(),
 	subject: yup
 		.string()
+		.required('Campo obrigatório')
 		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
+		.trim(),
 	message: yup
 		.string()
+		.required('Campo obrigatório')
 		.min(3, 'Mínimo de 3 caracteres')
-		.trim()
-		.required('Campo obrigatório'),
+		.trim(),
 });
 
 export const ContactForm = () => {
