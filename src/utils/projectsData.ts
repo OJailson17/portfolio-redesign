@@ -33,14 +33,14 @@ export const projects: Project[] = [
 		demo: 'https://coffee-delivery-jso.vercel.app/',
 		techs: ['ReactJS', 'Styled Components', 'Typescript'],
 	},
-	{
-		name: 'Food Delivery',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/food-delivery-home_kCR-KPZW4.avif?updatedAt=1725149024572',
-		code: 'https://github.com/OJailson17/food_delivery',
-		demo: 'https://food-delivery-jso.vercel.app/',
-		techs: ['NextJS', 'Stripe', 'Redux', 'Styled Components'],
-	},
+	// {
+	// 	name: 'Food Delivery',
+	// 	imageUrl:
+	// 		'https://ik.imagekit.io/jayllson/food-delivery-home_kCR-KPZW4.avif?updatedAt=1725149024572',
+	// 	code: 'https://github.com/OJailson17/food_delivery',
+	// 	demo: 'https://food-delivery-jso.vercel.app/',
+	// 	techs: ['NextJS', 'Stripe', 'Redux', 'Styled Components'],
+	// },
 	{
 		name: 'Pricing Table',
 		imageUrl:
