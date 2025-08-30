@@ -11,9 +11,6 @@
 		"start": "next start",
 		"lint": "next lint"
 	},
-	"engines": {
-		"node": ">=22.0.0 <23.0.0"
-	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.3.2",
 		"@next/third-parties": "^14.2.7",
