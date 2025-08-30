@@ -60,8 +60,10 @@ export async function POST(req: NextRequest) {
 
 	try {
 		// Set the credentials
-		oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-		const accessToken = oAuth2Client.getAccessToken();
+		oAuth2Client.setCredentials({
+			refresh_token: REFRESH_TOKEN,
+		});
+		const accessToken = await oAuth2Client.getAccessToken();
 
 		const userEmail = process.env.NODEMAILER_USER_EMAIL;
 
@@ -91,10 +93,8 @@ export async function POST(req: NextRequest) {
 		// Send the email passing the options
 		const result = await transport.sendMail(mailOptions).catch(error => {
 			console.log({ error });
-			return NextResponse.json({ error });
+			return NextResponse.json({ error }, { status: 400 });
 		});
-
-		// console.log({ result: result?.accepted });
 
 		return NextResponse.json({
 			message: 'Mensagem enviada com sucesso',
@@ -103,6 +103,6 @@ export async function POST(req: NextRequest) {
 		});
 	} catch (error) {
 		console.log(error);
-		return NextResponse.json({ error });
+		return NextResponse.json({ error }, { status: 400 });
 	}
 }
