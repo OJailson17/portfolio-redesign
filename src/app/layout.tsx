@@ -4,6 +4,7 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import '../styles/global.css';
 import { ThemeContextProvider } from '../context/themeContext';
 import { Metadata, Viewport } from 'next';
+import { PrivacyConsentPopup } from '../components/PrivacyConsentPopup';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -109,6 +110,7 @@ export default function RootLayout({
 					<GoogleAnalytics
 						gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
 					/>
+					<PrivacyConsentPopup />
 					{children}
 				</ThemeContextProvider>
 			</body>
