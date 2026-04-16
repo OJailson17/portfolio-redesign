@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"private": true,
 	"repository": "https://github.com/OJailson17/portfolio-redesign.git",
 	"author": "OJailson17 <JaylsonO17@gmail.com>",
@@ -29,7 +29,7 @@
 		"googleapis": "^129.0.0",
 		"isomorphic-dompurify": "^2.3.0",
 		"next": "^16.2.1",
-		"nodemailer": "^7.0.11",
+		"nodemailer": "^8.0.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hook-form": "^7.49.2",
