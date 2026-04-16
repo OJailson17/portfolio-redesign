@@ -2,7 +2,7 @@ import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer, { TransportOptions } from 'nodemailer';
 import { emailSchemaHTML, emailSchemaText } from '../../../utils/emailSchema';
-import { sanitize } from 'isomorphic-dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { Redis } from '@upstash/redis';
 
 type BodyProps = {
@@ -86,8 +86,8 @@ export async function POST(req: NextRequest) {
 			from: `${name} <${email}>`,
 			to: `${userEmailDest}`,
 			subject: subject,
-			text: emailSchemaText(sanitize(name), sanitize(email), sanitize(message)),
-			html: emailSchemaHTML(sanitize(name), sanitize(email), sanitize(message)),
+			text: emailSchemaText(DOMPurify.sanitize(name), DOMPurify.sanitize(email), DOMPurify.sanitize(message)),
+			html: emailSchemaHTML(DOMPurify.sanitize(name), DOMPurify.sanitize(email), DOMPurify.sanitize(message)),
 		};
 
 		// Send the email passing the options
