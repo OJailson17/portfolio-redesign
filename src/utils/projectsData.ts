@@ -17,14 +17,14 @@ export const projects: Project[] = [
 		demo: 'https://calculadoracontadeagua.vercel.app',
 		techs: ['NextJS', 'TailwindCSS', 'Typescript'],
 	},
-	{
-		name: 'Bíblia Sagrada Website',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/biblia-screen-home-page_CiXVo7S1h.avif?updatedAt=1725149380185',
-		code: 'https://github.com/OJailson17/holy-bible-website',
-		demo: 'https://bibliasagrada.vercel.app/',
-		techs: ['Material UI', 'ReactJS', 'Styled Components'],
-	},
+	// {
+	// 	name: 'Bíblia Sagrada Website',
+	// 	imageUrl:
+	// 		'https://ik.imagekit.io/jayllson/biblia-screen-home-page_CiXVo7S1h.avif?updatedAt=1725149380185',
+	// 	code: 'https://github.com/OJailson17/holy-bible-website',
+	// 	demo: 'https://bibliasagrada.vercel.app/',
+	// 	techs: ['Material UI', 'ReactJS', 'Styled Components'],
+	// },
 	{
 		name: 'Coffee Delivery',
 		imageUrl:
@@ -65,12 +65,12 @@ export const projects: Project[] = [
 		demo: 'https://jodictionary.netlify.app/',
 		techs: ['ReactJS', 'Typescript', 'Chakra UI'],
 	},
-	{
-		name: 'Bíblia Sagrada App',
-		imageUrl:
-			'https://ik.imagekit.io/jayllson/bible-app-initial_r-p695kff.avif?updatedAt=1725149024710',
-		code: 'https://github.com/OJailson17/holy-blible-react-native',
-		demo: 'https://github.com/OJailson17/holy-blible-react-native/releases/download/v1.0-beta/biblia-sagrada-app.apk',
-		techs: ['Expo', 'React Native'],
-	},
+	// {
+	// 	name: 'Bíblia Sagrada App',
+	// 	imageUrl:
+	// 		'https://ik.imagekit.io/jayllson/bible-app-initial_r-p695kff.avif?updatedAt=1725149024710',
+	// 	code: 'https://github.com/OJailson17/holy-blible-react-native',
+	// 	demo: 'https://github.com/OJailson17/holy-blible-react-native/releases/download/v1.0-beta/biblia-sagrada-app.apk',
+	// 	techs: ['Expo', 'React Native'],
+	// },
 ];
