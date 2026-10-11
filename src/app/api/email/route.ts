@@ -1,9 +1,8 @@
-import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer, { TransportOptions } from 'nodemailer';
-import { emailSchemaHTML, emailSchemaText } from '../../../utils/emailSchema';
+import { emailSchemaHTML } from '../../../utils/emailSchema';
 import DOMPurify from 'isomorphic-dompurify';
 import { Redis } from '@upstash/redis';
+import { Resend } from 'resend';
 
 type BodyProps = {
 	name: string;
@@ -13,12 +12,10 @@ type BodyProps = {
 };
 
 const {
-	CLIENT_ID,
-	CLIENT_SECRET,
-	REDIRECT_URL,
-	REFRESH_TOKEN,
 	UPSTASH_REDIS_REST_URL,
 	UPSTASH_REDIS_REST_TOKEN,
+	RESEND_USER_EMAIL,
+	RESEND_USER_EMAIL_DEST,
 } = process.env;
 
 const redis = new Redis({
@@ -28,15 +25,10 @@ const redis = new Redis({
 
 const ONE_HOUR_IN_SECONDS = 60 * 60;
 
-const RATE_LIMIT = 5;
+const RATE_LIMIT = 15;
 const TIME_WINDOW = ONE_HOUR_IN_SECONDS;
 
-// OAuth authentication
-const oAuth2Client = new google.auth.OAuth2(
-	CLIENT_ID,
-	CLIENT_SECRET,
-	REDIRECT_URL,
-);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
 	const { email, message, name, subject } = (await req.json()) as BodyProps;
@@ -59,47 +51,26 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
-		// Set the credentials
-		oAuth2Client.setCredentials({
-			refresh_token: REFRESH_TOKEN,
-		});
-		const accessToken = await oAuth2Client.getAccessToken();
-
-		const userEmail = process.env.NODEMAILER_USER_EMAIL;
-
-		// Create the transport
-		const transport = nodemailer.createTransport({
-			service: 'gmail',
-			auth: {
-				type: 'OAUTH2',
-				user: `${userEmail}`,
-				clientId: CLIENT_ID,
-				clientSecret: CLIENT_SECRET,
-				refreshToken: REFRESH_TOKEN,
-				accessToken: accessToken,
-			},
-		} as TransportOptions);
-
-		const userEmailDest = process.env.NODEMAILER_USER_EMAIL_DEST;
-
-		const mailOptions = {
-			from: `${name} <${email}>`,
-			to: `${userEmailDest}`,
-			subject: subject,
-			text: emailSchemaText(DOMPurify.sanitize(name), DOMPurify.sanitize(email), DOMPurify.sanitize(message)),
-			html: emailSchemaHTML(DOMPurify.sanitize(name), DOMPurify.sanitize(email), DOMPurify.sanitize(message)),
-		};
-
 		// Send the email passing the options
-		const result = await transport.sendMail(mailOptions).catch(error => {
-			console.log({ error });
-			return NextResponse.json({ error }, { status: 400 });
+		const { error, data } = await resend.emails.send({
+			from: `Portfolio ${RESEND_USER_EMAIL}`,
+			to: `${RESEND_USER_EMAIL_DEST}`,
+			subject,
+			html: emailSchemaHTML(
+				DOMPurify.sanitize(name),
+				DOMPurify.sanitize(email),
+				DOMPurify.sanitize(message),
+			),
 		});
+
+		if (error) {
+			return NextResponse.json({ error }, { status: 400 });
+		}
 
 		return NextResponse.json({
 			message: 'Mensagem enviada com sucesso',
 			status: 200,
-			result,
+			data,
 		});
 	} catch (error) {
 		console.log(error);
