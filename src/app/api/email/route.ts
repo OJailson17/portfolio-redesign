@@ -25,7 +25,7 @@ const redis = new Redis({
 
 const ONE_HOUR_IN_SECONDS = 60 * 60;
 
-const RATE_LIMIT = 15;
+const RATE_LIMIT = 5;
 const TIME_WINDOW = ONE_HOUR_IN_SECONDS;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
